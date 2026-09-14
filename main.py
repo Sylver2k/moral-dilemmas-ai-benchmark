@@ -1,15 +1,15 @@
-"""Small entry point for checking the DailyDilemmas data loader behavior."""
-
 from pathlib import Path
 
-from src.moral_dilemmas import DailyDilemmasLoader
+from dotenv import load_dotenv
+
+from src.moral_dilemmas import LLM, DailyDilemmasLoader
 
 PROJECT_ROOT = Path(__file__).resolve().parent
 RAW_DATASET_PATH = PROJECT_ROOT / "data" / "raw" / "Dilemmas_with_values_aggregated.csv"
 UNIFIED_DATASET_PATH = PROJECT_ROOT / "data" / "processed" / "daily_dilemmas_unified.csv"
 
 
-def main() -> None:
+def dataset_loader_debug() -> None:
     loader = DailyDilemmasLoader(RAW_DATASET_PATH)
 
     raw_dataset = loader.load_raw_dataset()
@@ -30,5 +30,18 @@ def main() -> None:
     print(f"Option not to do: {first_dilemma['not_to_do_action']}")
 
 
+def llm_debug() -> None:
+
+    llm = LLM(
+        model="gpt-oss:20b",
+        system_prompt="You answer moral dilemma questions concisely.",
+    )
+
+    response = llm.generate("Should I report a colleague misusing company resources?")
+    print(response)
+
+
 if __name__ == "__main__":
-    main()
+    load_dotenv()
+
+    llm_debug()
