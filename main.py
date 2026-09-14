@@ -2,7 +2,11 @@ from pathlib import Path
 
 from dotenv import load_dotenv
 
-from src.moral_dilemmas import LLM, DailyDilemmasLoader
+from src.moral_dilemmas import (
+    DEFAULT_SYSTEM_PROMPT,
+    LLM,
+    DailyDilemmasLoader,
+)
 
 PROJECT_ROOT = Path(__file__).resolve().parent
 RAW_DATASET_PATH = PROJECT_ROOT / "data" / "raw" / "Dilemmas_with_values_aggregated.csv"
@@ -34,7 +38,7 @@ def llm_debug() -> None:
 
     llm = LLM(
         model="gpt-oss:20b",
-        system_prompt="You answer moral dilemma questions concisely.",
+        system_prompt=DEFAULT_SYSTEM_PROMPT,
     )
 
     response = llm.generate("Should I report a colleague misusing company resources?")
