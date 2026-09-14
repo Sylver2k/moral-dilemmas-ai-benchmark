@@ -1,0 +1,4 @@
+-r requirements.txt
+
+# Code quality
+ruff>=0.13,<1

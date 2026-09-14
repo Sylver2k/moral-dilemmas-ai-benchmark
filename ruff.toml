@@ -1,0 +1,18 @@
+target-version = "py312"
+line-length = 100
+
+[lint]
+select = [
+    "E4",  # Import and whitespace errors
+    "E7",  # Statement errors
+    "E9",  # Runtime and syntax errors
+    "F",   # Pyflakes
+    "I",   # Import sorting
+    "B",   # Likely bugs
+    "UP",  # Modern Python syntax
+    "SIM", # Simplifications
+]
+
+[format]
+quote-style = "double"
+indent-style = "space"
