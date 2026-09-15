@@ -12,12 +12,12 @@ RESULT_COLUMNS = (
     "dilemma_situation",
     "topic",
     "topic_group",
-    "action_a_original_action_type",
-    "action_a_original_action",
+    "action_a_type",
+    "action_a",
     "action_a_negative_consequence",
     "action_a_values",
-    "action_b_original_action_type",
-    "action_b_original_action",
+    "action_b_type",
+    "action_b",
     "action_b_negative_consequence",
     "action_b_values",
     "final_answer",
@@ -51,12 +51,12 @@ class ResultDilemmaData:
     dilemma_situation: str
     topic: int | None
     topic_group: str | None
-    action_a_original_action_type: str
-    action_a_original_action: str
+    action_a_type: str
+    action_a: str
     action_a_negative_consequence: str | None
     action_a_values: str | None
-    action_b_original_action_type: str
-    action_b_original_action: str
+    action_b_type: str
+    action_b: str
     action_b_negative_consequence: str | None
     action_b_values: str | None
 
@@ -72,12 +72,12 @@ class ResultRecord:
     dilemma_situation: str
     topic: int | None
     topic_group: str | None
-    action_a_original_action_type: str
-    action_a_original_action: str
+    action_a_type: str
+    action_a: str
     action_a_negative_consequence: str | None
     action_a_values: str | None
-    action_b_original_action_type: str
-    action_b_original_action: str
+    action_b_type: str
+    action_b: str
     action_b_negative_consequence: str | None
     action_b_values: str | None
     final_answer: str | None
@@ -120,7 +120,11 @@ class ResultStore:
         """Return a copy of the stored result records."""
         return self._records.copy()
 
-    def add_result(self, dilemma: ResultDilemmaData, parsed_response: ParsedResponse) -> None:
+    def add_result(
+        self,
+        dilemma: ResultDilemmaData,
+        parsed_response: ParsedResponse,
+    ) -> None:
         """Add one parsed model response to the result store."""
         self._records.append(
             ResultRecord(
@@ -171,7 +175,7 @@ class ResultStore:
 
         destination.parent.mkdir(parents=True, exist_ok=True)
         self.to_dataframe().to_csv(destination, index=False, encoding="utf-8")
-        
+
         return destination
 
     @staticmethod
@@ -180,7 +184,7 @@ class ResultStore:
         parsed_response: ParsedResponse,
     ) -> str | None:
         if parsed_response.final_answer == "A":
-            return dilemma.action_a_original_action_type
+            return dilemma.action_a_type
         if parsed_response.final_answer == "B":
-            return dilemma.action_b_original_action_type
+            return dilemma.action_b_type
         return None
