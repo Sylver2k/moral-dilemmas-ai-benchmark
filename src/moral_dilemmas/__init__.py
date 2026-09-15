@@ -9,6 +9,13 @@ from .prompt_builder import (
     DilemmaPromptData,
     PromptTemplate,
 )
+from .results import (
+    ParsedResponse,
+    ResultDilemmaData,
+    ResultRecord,
+    ResultStore,
+    parse_llm_response,
+)
 
 __all__ = [
     "DEFAULT_DILEMMA_TEMPLATE",
@@ -17,5 +24,10 @@ __all__ = [
     "DilemmaPromptBuilder",
     "DilemmaPromptData",
     "LLM",
+    "ParsedResponse",
     "PromptTemplate",
+    "ResultDilemmaData",
+    "ResultRecord",
+    "ResultStore",
+    "parse_llm_response",
 ]
