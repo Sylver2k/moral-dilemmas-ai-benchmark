@@ -1,4 +1,5 @@
 from pathlib import Path
+from random import Random
 
 import pandas as pd
 
@@ -24,6 +25,21 @@ class DailyDilemmasLoader:
         "not_to_do_action",
         "not_to_do_negative_consequence",
         "not_to_do_values",
+    )
+    EXPERIMENT_COLUMNS = (
+        "dilemma_id",
+        "basic_situation",
+        "dilemma_situation",
+        "topic",
+        "topic_group",
+        "action_a_type",
+        "action_a",
+        "action_a_negative_consequence",
+        "action_a_values",
+        "action_b_type",
+        "action_b",
+        "action_b_negative_consequence",
+        "action_b_values",
     )
 
     def __init__(self, dataset_path: str | Path) -> None:
@@ -77,6 +93,31 @@ class DailyDilemmasLoader:
         self._unified_dataset = unified_dataset
         return unified_dataset.copy(deep=True)
 
+    def create_experiment_dataset(self, seed: int) -> pd.DataFrame:
+        """Return one row per dilemma with reproducibly assigned A/B actions."""
+        randomizer = Random(seed)
+        unified_dataset = self.create_unified_dataset().sort_values("dilemma_idx")
+        records: list[dict[str, object]] = []
+
+        for _, row in unified_dataset.iterrows():
+            action_a_type, action_b_type = self.ACTION_TYPES
+            if randomizer.choice([True, False]):
+                action_a_type, action_b_type = action_b_type, action_a_type
+
+            records.append(
+                {
+                    "dilemma_id": row["dilemma_idx"],
+                    "basic_situation": row["basic_situation"],
+                    "dilemma_situation": row["dilemma_situation"],
+                    "topic": row["topic"],
+                    "topic_group": row["topic_group"],
+                    **self._experiment_action_values(row, "a", action_a_type),
+                    **self._experiment_action_values(row, "b", action_b_type),
+                }
+            )
+
+        return pd.DataFrame.from_records(records, columns=self.EXPERIMENT_COLUMNS)
+
     def export_unified_dataset(
         self,
         output_path: str | Path,
@@ -97,3 +138,38 @@ class DailyDilemmasLoader:
             encoding="utf-8",
         )
         return destination
+
+    def export_experiment_dataset(
+        self,
+        output_path: str | Path,
+        *,
+        seed: int,
+        overwrite: bool = False,
+    ) -> Path:
+        """Create and write the experiment dataset as a CSV file."""
+        destination = Path(output_path)
+        if destination.exists() and not overwrite:
+            raise FileExistsError(
+                f"Output already exists: {destination}. Set overwrite=True to replace it."
+            )
+
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        self.create_experiment_dataset(seed=seed).to_csv(
+            destination,
+            index=False,
+            encoding="utf-8",
+        )
+        return destination
+
+    @staticmethod
+    def _experiment_action_values(
+        row: pd.Series,
+        label: str,
+        action_type: str,
+    ) -> dict[str, object]:
+        return {
+            f"action_{label}_type": action_type,
+            f"action_{label}": row[f"{action_type}_action"],
+            f"action_{label}_negative_consequence": row[f"{action_type}_negative_consequence"],
+            f"action_{label}_values": row[f"{action_type}_values"],
+        }
