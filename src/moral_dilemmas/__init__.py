@@ -1,6 +1,7 @@
 """Utilities for running the DailyDilemmas research project."""
 
 from .data_loader import DailyDilemmasLoader
+from .experiment_runner import ExperimentRunner
 from .llm import LLM
 from .prompt_builder import (
     DEFAULT_DILEMMA_TEMPLATE,
@@ -23,6 +24,7 @@ __all__ = [
     "DailyDilemmasLoader",
     "DilemmaPromptBuilder",
     "DilemmaPromptData",
+    "ExperimentRunner",
     "LLM",
     "ParsedResponse",
     "PromptTemplate",
