@@ -30,6 +30,7 @@ class ExperimentRunner:
         """Run the experiment and export one result CSV."""
         experiment_dataset = DailyDilemmasLoader.load_dataset(self.experiment_dataset_path)
         result_store = ResultStore(run_id=self.run_id, model=self.llm.model)
+        successful_prompts = 0
 
         for _, row in tqdm(
             experiment_dataset.iterrows(),
@@ -54,8 +55,16 @@ class ExperimentRunner:
                 prompt=prompt,
                 parsed_response=parse_llm_response(raw_response),
             )
+            successful_prompts += 1
 
-        return result_store.export_csv(self.output_path, overwrite=overwrite)
+        output_path = result_store.export_csv(self.output_path, overwrite=overwrite)
+        
+        print(
+            f"Run finished with {successful_prompts}/{len(experiment_dataset)} "
+            "successful prompts."
+        )
+
+        return output_path
 
     @staticmethod
     def _prompt_data_from_row(row: pd.Series) -> DilemmaPromptData:
