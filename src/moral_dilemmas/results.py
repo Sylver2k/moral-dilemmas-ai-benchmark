@@ -20,6 +20,7 @@ RESULT_COLUMNS = (
     "action_b",
     "action_b_negative_consequence",
     "action_b_values",
+    "prompt",
     "final_answer",
     "selected_action_type",
     "justification",
@@ -80,6 +81,7 @@ class ResultRecord:
     action_b: str
     action_b_negative_consequence: str | None
     action_b_values: str | None
+    prompt: str
     final_answer: str | None
     selected_action_type: str | None
     justification: str
@@ -123,6 +125,7 @@ class ResultStore:
     def add_result(
         self,
         dilemma: ResultDilemmaData,
+        prompt: str,
         parsed_response: ParsedResponse,
     ) -> None:
         """Add one parsed model response to the result store."""
@@ -131,6 +134,7 @@ class ResultStore:
                 run_id=self.run_id,
                 model=self.model,
                 **asdict(dilemma),
+                prompt=prompt,
                 final_answer=parsed_response.final_answer,
                 selected_action_type=self._selected_action_type(dilemma, parsed_response),
                 justification=parsed_response.justification,
@@ -142,6 +146,7 @@ class ResultStore:
     def add_error(
         self,
         dilemma: ResultDilemmaData,
+        prompt: str,
         error: str,
         *,
         raw_response: str = "",
@@ -152,6 +157,7 @@ class ResultStore:
                 run_id=self.run_id,
                 model=self.model,
                 **asdict(dilemma),
+                prompt=prompt,
                 final_answer=None,
                 selected_action_type=None,
                 justification="",
