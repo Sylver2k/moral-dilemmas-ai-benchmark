@@ -1,4 +1,5 @@
 from pathlib import Path
+from time import perf_counter
 
 import pandas as pd
 from tqdm import tqdm
@@ -28,6 +29,7 @@ class ExperimentRunner:
 
     def run(self, *, overwrite: bool = False) -> Path:
         """Run the experiment and export one result CSV."""
+        started_at = perf_counter()
         experiment_dataset = DailyDilemmasLoader.load_dataset(self.experiment_dataset_path)
         result_store = ResultStore(run_id=self.run_id, model=self.llm.model)
         successful_prompts = 0
@@ -59,10 +61,14 @@ class ExperimentRunner:
 
         output_path = result_store.export_csv(self.output_path, overwrite=overwrite)
         
+        elapsed_minutes = int((perf_counter() - started_at) / 60)
+        hours, minutes = divmod(elapsed_minutes, 60)
+        
         print(
             f"Run finished with {successful_prompts}/{len(experiment_dataset)} "
             "successful prompts."
         )
+        print(f"Run took {hours}h {minutes}min.")
 
         return output_path
 
