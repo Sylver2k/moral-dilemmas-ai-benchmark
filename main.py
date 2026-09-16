@@ -102,6 +102,7 @@ def run_experiment() -> Path:
     loader.export_experiment_dataset(
         EXPERIMENT_DATASET_PATH,
         seed=EXPERIMENT_RANDOM_SEED,
+        limit=None,
         overwrite=True,
     )
 
