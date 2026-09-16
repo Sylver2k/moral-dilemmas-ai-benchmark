@@ -60,15 +60,16 @@ class ExperimentRunner:
             successful_prompts += 1
 
         output_path = result_store.export_csv(self.output_path, overwrite=overwrite)
-        
-        elapsed_minutes = int((perf_counter() - started_at) / 60)
-        hours, minutes = divmod(elapsed_minutes, 60)
-        
+
+        elapsed_seconds = int(perf_counter() - started_at)
+        minutes, seconds = divmod(elapsed_seconds, 60)
+        hours, minutes = divmod(minutes, 60)
+
         print(
             f"Run finished with {successful_prompts}/{len(experiment_dataset)} "
             "successful prompts."
         )
-        print(f"Run took {hours}h {minutes}min.")
+        print(f"Run took {hours}h {minutes}min {seconds}s.")
 
         return output_path
 
