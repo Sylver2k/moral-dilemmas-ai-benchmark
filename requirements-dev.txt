@@ -2,3 +2,6 @@
 
 # Code quality
 ruff>=0.13,<1
+
+# Tests
+pytest>=8,<10
