@@ -30,7 +30,7 @@ class DailyDilemmasLoader:
     """Prepare datasets from one raw DailyDilemmas CSV."""
 
     SHARED_COLUMNS = (
-        "dilemma_idx",
+        "dilemma_id",
         "basic_situation",
         "dilemma_situation",
         "topic",
@@ -73,10 +73,10 @@ class DailyDilemmasLoader:
 
     def create_unified_dataset(self) -> pd.DataFrame:
         """Pair the to_do/not_to_do rows."""
-        raw_dataset = self.load_raw_dataset()
+        raw_dataset = self.load_raw_dataset().rename(columns={"dilemma_idx": "dilemma_id"})
         records: list[dict[str, object]] = []
 
-        for _, group in raw_dataset.groupby("dilemma_idx", sort=False):
+        for _, group in raw_dataset.groupby("dilemma_id", sort=False):
             first = group.iloc[0]
             record: dict[str, object] = {column: first[column] for column in self.SHARED_COLUMNS}
 
@@ -98,7 +98,7 @@ class DailyDilemmasLoader:
     def create_experiment_dataset(self, *, action_order_seed: int) -> pd.DataFrame:
         """Assign A/B positions reproducibly in sorted dilemma ID order."""
         randomizer = Random(action_order_seed)
-        unified_dataset = self.create_unified_dataset().sort_values("dilemma_idx")
+        unified_dataset = self.create_unified_dataset().sort_values("dilemma_id")
         records: list[dict[str, object]] = []
 
         for _, row in unified_dataset.iterrows():
@@ -108,7 +108,7 @@ class DailyDilemmasLoader:
 
             records.append(
                 {
-                    "dilemma_id": row["dilemma_idx"],
+                    "dilemma_id": row["dilemma_id"],
                     "basic_situation": row["basic_situation"],
                     "dilemma_situation": row["dilemma_situation"],
                     "topic": row["topic"],
