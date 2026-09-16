@@ -127,7 +127,7 @@ class DailyDilemmasLoader:
     ) -> pd.DataFrame:
         """Assign A/B labels on the full dataset, then sample equally per topic group."""
         experiment_dataset = self.create_experiment_dataset(action_order_seed=action_order_seed)
-        
+
         return (
             experiment_dataset.groupby("topic_group", group_keys=False)
             .sample(n=samples_per_topic_group, random_state=sampling_seed)
@@ -152,6 +152,35 @@ class DailyDilemmasLoader:
         )
 
         return write_dataset_csv(dataset, output_path, overwrite=overwrite)
+
+    def export_all_datasets(
+        self,
+        output_dir: str | Path,
+        *,
+        action_order_seed: int,
+        sampling_seed: int,
+        samples_per_topic_group: int = 40,
+        overwrite: bool = False,
+    ) -> dict[str, Path]:
+        """Export every stage as csv and return their paths."""
+
+        datasets = {
+            "unified": self.create_unified_dataset(),
+            "experiment": self.create_experiment_dataset(action_order_seed=action_order_seed),
+            "sampled_experiment": self.create_sampled_experiment_dataset(
+                action_order_seed=action_order_seed,
+                sampling_seed=sampling_seed,
+                samples_per_topic_group=samples_per_topic_group,
+            ),
+        }
+        return {
+            stage: write_dataset_csv(
+                dataset,
+                Path(output_dir) / f"daily_dilemmas_{stage}.csv",
+                overwrite=overwrite,
+            )
+            for stage, dataset in datasets.items()
+        }
 
     @staticmethod
     def _experiment_action_values(
