@@ -119,6 +119,25 @@ class DailyDilemmasLoader:
         experiment_dataset = pd.DataFrame.from_records(records, columns=self.EXPERIMENT_COLUMNS)
         return self._apply_limit(experiment_dataset, limit)
 
+    def create_sampled_experiment_dataset(
+        self,
+        seed: int,
+        sampling_seed: int,
+        samples_per_topic_group: int = 40,
+        limit: int | None = None,
+    ) -> pd.DataFrame:
+        """Return a stratified sample of the experiment dataset by topic group."""
+        experiment_dataset = self.create_experiment_dataset(seed=seed)
+
+        sampled_dataset = (
+            experiment_dataset.groupby("topic_group", group_keys=False)
+            .sample(n=samples_per_topic_group, random_state=sampling_seed)
+            .sort_values("dilemma_id")
+            .reset_index(drop=True)
+        )
+
+        return self._apply_limit(sampled_dataset, limit)
+
     def export_unified_dataset(
         self,
         output_path: str | Path,
@@ -158,6 +177,36 @@ class DailyDilemmasLoader:
 
         destination.parent.mkdir(parents=True, exist_ok=True)
         self.create_experiment_dataset(seed=seed, limit=limit).to_csv(
+            destination,
+            index=False,
+            encoding="utf-8",
+        )
+        return destination
+
+    def export_sampled_experiment_dataset(
+        self,
+        output_path: str | Path,
+        *,
+        seed: int,
+        sampling_seed: int,
+        samples_per_topic_group: int = 40,
+        limit: int | None = None,
+        overwrite: bool = False,
+    ) -> Path:
+        """Create and write the sampled experiment dataset as a CSV file."""
+        destination = Path(output_path)
+        if destination.exists() and not overwrite:
+            raise FileExistsError(
+                f"Output already exists: {destination}. Set overwrite=True to replace it."
+            )
+
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        self.create_sampled_experiment_dataset(
+            seed=seed,
+            sampling_seed=sampling_seed,
+            samples_per_topic_group=samples_per_topic_group,
+            limit=limit,
+        ).to_csv(
             destination,
             index=False,
             encoding="utf-8",
