@@ -4,8 +4,27 @@ from random import Random
 import pandas as pd
 
 
+def read_dataset_csv(dataset_path: str | Path) -> pd.DataFrame:
+    """Read a CSV into a DataFrame."""
+    return pd.read_csv(dataset_path)
+
+
+def write_dataset_csv(
+    dataset: pd.DataFrame, output_path: str | Path, *, overwrite: bool = False
+) -> Path:
+    """Write an already prepared DataFrame as CSV"""
+    destination = Path(output_path)
+    if destination.exists() and not overwrite:
+        raise FileExistsError(
+            f"Output already exists: {destination}. Set overwrite=True to replace it."
+        )
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    dataset.to_csv(destination, index=False, encoding="utf-8", mode="w" if overwrite else "x")
+    return destination
+
+
 class DailyDilemmasLoader:
-    """Load, transform, and export the DailyDilemmas dataset."""
+    """Prepare datasets from one raw DailyDilemmas CSV."""
 
     SHARED_COLUMNS = (
         "dilemma_idx",
@@ -44,31 +63,13 @@ class DailyDilemmasLoader:
 
     def __init__(self, dataset_path: str | Path) -> None:
         self.dataset_path = Path(dataset_path)
-        self._raw_dataset: pd.DataFrame | None = None
-        self._unified_dataset: pd.DataFrame | None = None
-
-    @staticmethod
-    def load_dataset(dataset_path: str | Path) -> pd.DataFrame:
-        """Load a CSV dataset from a path."""
-        path = Path(dataset_path)
-        if not path.is_file():
-            raise FileNotFoundError(f"Dataset not found: {path}")
-
-        return pd.read_csv(path)
 
     def load_raw_dataset(self) -> pd.DataFrame:
-        """Load the raw DailyDilemmas CSV, returning a defensive copy."""
-        if self._raw_dataset is None:
-            self._raw_dataset = self.load_dataset(self.dataset_path)
-            self._unified_dataset = None
+        """Read the source CSV."""
+        return read_dataset_csv(self.dataset_path)
 
-        return self._raw_dataset.copy(deep=True)
-
-    def create_unified_dataset(self, limit: int | None = None) -> pd.DataFrame:
-        """Return one row per dilemma with both actions in separate columns."""
-        if self._unified_dataset is not None:
-            return self._apply_limit(self._unified_dataset, limit).copy(deep=True)
-
+    def create_unified_dataset(self) -> pd.DataFrame:
+        """Pair the to_do/not_to_do rows."""
         raw_dataset = self.load_raw_dataset()
         records: list[dict[str, object]] = []
 
@@ -89,13 +90,11 @@ class DailyDilemmasLoader:
 
             records.append(record)
 
-        unified_dataset = pd.DataFrame.from_records(records, columns=self.UNIFIED_COLUMNS)
-        self._unified_dataset = unified_dataset
-        return self._apply_limit(unified_dataset, limit).copy(deep=True)
+        return pd.DataFrame.from_records(records, columns=self.UNIFIED_COLUMNS)
 
-    def create_experiment_dataset(self, seed: int, limit: int | None = None) -> pd.DataFrame:
-        """Return one row per dilemma with reproducibly assigned A/B actions."""
-        randomizer = Random(seed)
+    def create_experiment_dataset(self, *, action_order_seed: int) -> pd.DataFrame:
+        """Assign A/B positions reproducibly in sorted dilemma ID order."""
+        randomizer = Random(action_order_seed)
         unified_dataset = self.create_unified_dataset().sort_values("dilemma_idx")
         records: list[dict[str, object]] = []
 
@@ -117,101 +116,42 @@ class DailyDilemmasLoader:
             )
 
         experiment_dataset = pd.DataFrame.from_records(records, columns=self.EXPERIMENT_COLUMNS)
-        return self._apply_limit(experiment_dataset, limit)
+        return experiment_dataset
 
     def create_sampled_experiment_dataset(
         self,
-        seed: int,
-        sampling_seed: int,
+        *,
+        action_order_seed: int,
         samples_per_topic_group: int = 40,
-        limit: int | None = None,
+        sampling_seed: int,
     ) -> pd.DataFrame:
-        """Return a stratified sample of the experiment dataset by topic group."""
-        experiment_dataset = self.create_experiment_dataset(seed=seed)
-
-        sampled_dataset = (
+        """Assign A/B labels on the full dataset, then sample equally per topic group."""
+        experiment_dataset = self.create_experiment_dataset(action_order_seed=action_order_seed)
+        
+        return (
             experiment_dataset.groupby("topic_group", group_keys=False)
             .sample(n=samples_per_topic_group, random_state=sampling_seed)
             .sort_values("dilemma_id")
             .reset_index(drop=True)
         )
 
-        return self._apply_limit(sampled_dataset, limit)
-
-    def export_unified_dataset(
-        self,
-        output_path: str | Path,
-        *,
-        limit: int | None = None,
-        overwrite: bool = False,
-    ) -> Path:
-        """Create and write the unified dataset as a UTF-8 CSV file."""
-        destination = Path(output_path)
-        if destination.exists() and not overwrite:
-            raise FileExistsError(
-                f"Output already exists: {destination}. Set overwrite=True to replace it."
-            )
-
-        destination.parent.mkdir(parents=True, exist_ok=True)
-        self.create_unified_dataset(limit=limit).to_csv(
-            destination,
-            index=False,
-            encoding="utf-8",
-        )
-        return destination
-
-    def export_experiment_dataset(
-        self,
-        output_path: str | Path,
-        *,
-        seed: int,
-        limit: int | None = None,
-        overwrite: bool = False,
-    ) -> Path:
-        """Create and write the experiment dataset as a CSV file."""
-        destination = Path(output_path)
-        if destination.exists() and not overwrite:
-            raise FileExistsError(
-                f"Output already exists: {destination}. Set overwrite=True to replace it."
-            )
-
-        destination.parent.mkdir(parents=True, exist_ok=True)
-        self.create_experiment_dataset(seed=seed, limit=limit).to_csv(
-            destination,
-            index=False,
-            encoding="utf-8",
-        )
-        return destination
-
     def export_sampled_experiment_dataset(
         self,
         output_path: str | Path,
         *,
-        seed: int,
+        action_order_seed: int,
         sampling_seed: int,
         samples_per_topic_group: int = 40,
-        limit: int | None = None,
         overwrite: bool = False,
     ) -> Path:
-        """Create and write the sampled experiment dataset as a CSV file."""
-        destination = Path(output_path)
-        if destination.exists() and not overwrite:
-            raise FileExistsError(
-                f"Output already exists: {destination}. Set overwrite=True to replace it."
-            )
-
-        destination.parent.mkdir(parents=True, exist_ok=True)
-        self.create_sampled_experiment_dataset(
-            seed=seed,
+        """Create the sampled experiment dataset and export it, returning its CSV path."""
+        dataset = self.create_sampled_experiment_dataset(
+            action_order_seed=action_order_seed,
             sampling_seed=sampling_seed,
             samples_per_topic_group=samples_per_topic_group,
-            limit=limit,
-        ).to_csv(
-            destination,
-            index=False,
-            encoding="utf-8",
         )
-        return destination
+
+        return write_dataset_csv(dataset, output_path, overwrite=overwrite)
 
     @staticmethod
     def _experiment_action_values(
@@ -225,13 +165,3 @@ class DailyDilemmasLoader:
             f"action_{label}_negative_consequence": row[f"{action_type}_negative_consequence"],
             f"action_{label}_values": row[f"{action_type}_values"],
         }
-
-    @staticmethod
-    def _apply_limit(dataset: pd.DataFrame, limit: int | None) -> pd.DataFrame:
-        if limit is None:
-            return dataset
-
-        if limit < 0:
-            raise ValueError("limit must be greater than or equal to 0, or None.")
-
-        return dataset.head(limit)
