@@ -4,7 +4,7 @@ from time import perf_counter
 import pandas as pd
 from tqdm import tqdm
 
-from .data_loader import DailyDilemmasLoader
+from .data_loader import read_dataset_csv
 from .llm import LLM
 from .prompt_builder import DilemmaPromptBuilder, DilemmaPromptData
 from .results import ResultDilemmaData, ResultStore, parse_llm_response
@@ -30,7 +30,7 @@ class ExperimentRunner:
     def run(self, *, overwrite: bool = False) -> Path:
         """Run the experiment and export one result CSV."""
         started_at = perf_counter()
-        experiment_dataset = DailyDilemmasLoader.load_dataset(self.experiment_dataset_path)
+        experiment_dataset = read_dataset_csv(self.experiment_dataset_path)
         result_store = ResultStore(run_id=self.run_id, model=self.llm.model)
         successful_prompts = 0
 
@@ -66,8 +66,7 @@ class ExperimentRunner:
         hours, minutes = divmod(minutes, 60)
 
         print(
-            f"Run finished with {successful_prompts}/{len(experiment_dataset)} "
-            "successful prompts."
+            f"Run finished with {successful_prompts}/{len(experiment_dataset)} successful prompts."
         )
         print(f"Run took {hours}h {minutes}min {seconds}s.")
 

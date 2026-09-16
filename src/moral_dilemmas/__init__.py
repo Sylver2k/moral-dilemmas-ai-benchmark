@@ -1,6 +1,10 @@
 """Utilities for running the DailyDilemmas research project."""
 
-from .data_loader import DailyDilemmasLoader
+from .data_loader import (
+    DailyDilemmasLoader,
+    read_dataset_csv,
+    write_dataset_csv,
+)
 from .experiment_runner import ExperimentRunner
 from .llm import LLM
 from .prompt_builder import (
@@ -32,4 +36,6 @@ __all__ = [
     "ResultRecord",
     "ResultStore",
     "parse_llm_response",
+    "read_dataset_csv",
+    "write_dataset_csv",
 ]
