@@ -17,12 +17,12 @@ class LLM:
     client: Client = field(init=False, repr=False)
 
     def __post_init__(self) -> None:
-        self.host = self.host or os.getenv("OLLAMA_HOST")
-
-        if self.host is None:
-            raise ValueError("Set OLLAMA_HOST, or pass host explicitly.")
+        if os.getenv("OLLAMA_HOST") is None:
+            raise ValueError("Set OLLAMA_HOST via the env file.")
 
         headers = self._auth_headers()
+
+        self.host = f"{os.getenv('OLLAMA_HOST')}:{os.getenv('OLLAMA_PORT')}"
         self.client = Client(host=self.host, headers=headers, timeout=self.timeout)
 
     def generate(
