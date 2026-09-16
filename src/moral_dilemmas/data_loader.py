@@ -6,7 +6,10 @@ import pandas as pd
 
 def read_dataset_csv(dataset_path: str | Path) -> pd.DataFrame:
     """Read a CSV into a DataFrame."""
-    return pd.read_csv(dataset_path)
+    path = Path(dataset_path)
+    if not path.exists():
+        raise FileNotFoundError(f"Dataset not found: {path}")
+    return pd.read_csv(path)
 
 
 def write_dataset_csv(
