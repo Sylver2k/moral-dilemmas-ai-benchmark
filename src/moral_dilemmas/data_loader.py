@@ -64,10 +64,10 @@ class DailyDilemmasLoader:
 
         return self._raw_dataset.copy(deep=True)
 
-    def create_unified_dataset(self) -> pd.DataFrame:
+    def create_unified_dataset(self, limit: int | None = None) -> pd.DataFrame:
         """Return one row per dilemma with both actions in separate columns."""
         if self._unified_dataset is not None:
-            return self._unified_dataset.copy(deep=True)
+            return self._apply_limit(self._unified_dataset, limit).copy(deep=True)
 
         raw_dataset = self.load_raw_dataset()
         records: list[dict[str, object]] = []
@@ -91,9 +91,9 @@ class DailyDilemmasLoader:
 
         unified_dataset = pd.DataFrame.from_records(records, columns=self.UNIFIED_COLUMNS)
         self._unified_dataset = unified_dataset
-        return unified_dataset.copy(deep=True)
+        return self._apply_limit(unified_dataset, limit).copy(deep=True)
 
-    def create_experiment_dataset(self, seed: int) -> pd.DataFrame:
+    def create_experiment_dataset(self, seed: int, limit: int | None = None) -> pd.DataFrame:
         """Return one row per dilemma with reproducibly assigned A/B actions."""
         randomizer = Random(seed)
         unified_dataset = self.create_unified_dataset().sort_values("dilemma_idx")
@@ -116,12 +116,14 @@ class DailyDilemmasLoader:
                 }
             )
 
-        return pd.DataFrame.from_records(records, columns=self.EXPERIMENT_COLUMNS)
+        experiment_dataset = pd.DataFrame.from_records(records, columns=self.EXPERIMENT_COLUMNS)
+        return self._apply_limit(experiment_dataset, limit)
 
     def export_unified_dataset(
         self,
         output_path: str | Path,
         *,
+        limit: int | None = None,
         overwrite: bool = False,
     ) -> Path:
         """Create and write the unified dataset as a UTF-8 CSV file."""
@@ -132,7 +134,7 @@ class DailyDilemmasLoader:
             )
 
         destination.parent.mkdir(parents=True, exist_ok=True)
-        self.create_unified_dataset().to_csv(
+        self.create_unified_dataset(limit=limit).to_csv(
             destination,
             index=False,
             encoding="utf-8",
@@ -144,6 +146,7 @@ class DailyDilemmasLoader:
         output_path: str | Path,
         *,
         seed: int,
+        limit: int | None = None,
         overwrite: bool = False,
     ) -> Path:
         """Create and write the experiment dataset as a CSV file."""
@@ -154,7 +157,7 @@ class DailyDilemmasLoader:
             )
 
         destination.parent.mkdir(parents=True, exist_ok=True)
-        self.create_experiment_dataset(seed=seed).to_csv(
+        self.create_experiment_dataset(seed=seed, limit=limit).to_csv(
             destination,
             index=False,
             encoding="utf-8",
@@ -173,3 +176,13 @@ class DailyDilemmasLoader:
             f"action_{label}_negative_consequence": row[f"{action_type}_negative_consequence"],
             f"action_{label}_values": row[f"{action_type}_values"],
         }
+
+    @staticmethod
+    def _apply_limit(dataset: pd.DataFrame, limit: int | None) -> pd.DataFrame:
+        if limit is None:
+            return dataset
+
+        if limit < 0:
+            raise ValueError("limit must be greater than or equal to 0, or None.")
+
+        return dataset.head(limit)
