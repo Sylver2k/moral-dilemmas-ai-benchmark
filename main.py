@@ -24,7 +24,7 @@ RAW_DATASET_PATH = PROJECT_ROOT / "data" / "raw" / "Dilemmas_with_values_aggrega
 UNIFIED_DATASET_PATH = PROJECT_ROOT / "data" / "processed" / "daily_dilemmas_unified.csv"
 EXPERIMENT_DATASET_PATH = PROJECT_ROOT / "data" / "processed" / "daily_dilemmas_experiment.csv"
 EXPERIMENT_RANDOM_SEED = 2187
-MODEL_NAME = "gpt-oss:20b"
+MODEL_NAME = "gpt-oss:20b" # qwen3.6:35b | gemma4:31b | mistral-small3.2:24b | gpt-oss:20b
 RUN_ID = get_run_id()
 RESULTS_PATH = PROJECT_ROOT / "data" / "results" / f"{RUN_ID}.csv"
 
