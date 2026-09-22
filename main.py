@@ -28,6 +28,7 @@ UNIFIED_DATASET_PATH = PROCESSED_DATASETS_PATH / "daily_dilemmas_unified.csv"
 EXPERIMENT_DATASET_PATH = PROCESSED_DATASETS_PATH / "daily_dilemmas_experiment.csv"
 SAMPLED_EXPERIMENT_DATASET_PATH = PROCESSED_DATASETS_PATH / "daily_dilemmas_sampled_experiment.csv"
 EXPERIMENT_RANDOM_SEED = 2187
+EXPERIMENT_TIMEOUT = 240
 MODEL_NAME = "gpt-oss:20b"  # qwen3.6:35b | gemma4:31b | mistral-small3.2:24b | gpt-oss:20b
 RUN_ID = get_run_id()
 RESULTS_PATH = PROJECT_ROOT / "data" / "results" / f"{RUN_ID}.csv"
@@ -114,6 +115,7 @@ def run_experiment() -> Path:
     llm = LLM(
         model=MODEL_NAME,
         system_prompt=DEFAULT_SYSTEM_PROMPT,
+        timeout=EXPERIMENT_TIMEOUT
     )
     runner = ExperimentRunner(
         experiment_dataset_path=SAMPLED_EXPERIMENT_DATASET_PATH,
