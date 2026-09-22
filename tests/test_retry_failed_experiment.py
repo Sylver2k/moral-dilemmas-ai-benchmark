@@ -8,6 +8,7 @@ from moral_dilemmas.data_loader import DailyDilemmasLoader, read_dataset_csv
 from retry_failed_experiment import (
     create_error_dataset,
     export_error_dataset,
+    merge_retry_results,
     run_retry_experiment,
 )
 
@@ -15,12 +16,13 @@ from retry_failed_experiment import (
 def result_row(
     dilemma_id: int,
     *,
+    run_id: str = "run",
     model: str = "gemma4:31b",
     final_answer: str | None = "A",
     error: str | None = None,
 ) -> dict[str, object]:
     return {
-        "run_id": "run",
+        "run_id": run_id,
         "model": model,
         "dilemma_id": dilemma_id,
         "basic_situation": f"Basic {dilemma_id}",
@@ -129,3 +131,100 @@ def test_run_retry_experiment_returns_none_when_no_failed_targets(tmp_path: Path
     assert result is None
     assert not (tmp_path / "error_dataset.csv").exists()
     assert not (tmp_path / "retry_results.csv").exists()
+
+
+def test_merge_retry_results_replaces_only_failed_rows_and_preserves_order(
+    tmp_path: Path,
+) -> None:
+    original_results = pd.DataFrame(
+        [
+            result_row(1, final_answer="A"),
+            result_row(2, final_answer=None, error="TimeoutError: timeout"),
+            result_row(3, final_answer="B"),
+        ]
+    )
+    retry_results = pd.DataFrame(
+        [
+            result_row(2, run_id="retry", final_answer="B", error=None),
+            result_row(3, run_id="retry", final_answer="A", error=None),
+        ]
+    )
+    original_path = tmp_path / "original.csv"
+    retry_path = tmp_path / "retry.csv"
+    output_path = tmp_path / "retried" / "merged" / "merged.csv"
+    original_results.to_csv(original_path, index=False)
+    retry_results.to_csv(retry_path, index=False)
+
+    merged_path = merge_retry_results(
+        original_results_path=original_path,
+        retry_results_path=retry_path,
+        output_path=output_path,
+        model_name="gemma4:31b",
+    )
+
+    merged_results = read_dataset_csv(merged_path)
+    expected = read_dataset_csv(original_path).astype("object")
+    retry_results_from_csv = read_dataset_csv(retry_path)
+    expected.loc[1, :] = retry_results_from_csv.loc[0, original_results.columns].to_numpy()
+
+    assert merged_path == output_path
+    assert merged_results["dilemma_id"].tolist() == [1, 2, 3]
+    assert_frame_equal(merged_results, expected, check_dtype=False)
+
+
+def test_merge_retry_results_does_not_replace_failures_for_other_models(
+    tmp_path: Path,
+) -> None:
+    original_results = pd.DataFrame(
+        [
+            result_row(1, model="gemma4:31b", final_answer=None, error="TimeoutError"),
+            result_row(2, model="qwen3.6:35b", final_answer=None, error="TimeoutError"),
+        ]
+    )
+    retry_results = pd.DataFrame(
+        [
+            result_row(1, run_id="retry", model="gemma4:31b", final_answer="A"),
+            result_row(2, run_id="retry", model="qwen3.6:35b", final_answer="B"),
+        ]
+    )
+    original_path = tmp_path / "original.csv"
+    retry_path = tmp_path / "retry.csv"
+    output_path = tmp_path / "merged.csv"
+    original_results.to_csv(original_path, index=False)
+    retry_results.to_csv(retry_path, index=False)
+
+    merge_retry_results(
+        original_results_path=original_path,
+        retry_results_path=retry_path,
+        output_path=output_path,
+        model_name="gemma4:31b",
+    )
+
+    merged_results = read_dataset_csv(output_path)
+    expected = read_dataset_csv(original_path).astype("object")
+    retry_results_from_csv = read_dataset_csv(retry_path)
+    expected.loc[0, :] = retry_results_from_csv.loc[0, original_results.columns].to_numpy()
+    assert_frame_equal(merged_results, expected, check_dtype=False)
+
+
+def test_merge_retry_results_rejects_duplicate_retry_rows(tmp_path: Path) -> None:
+    original_results = pd.DataFrame(
+        [result_row(1, final_answer=None, error="TimeoutError")]
+    )
+    retry_results = pd.DataFrame(
+        [
+            result_row(1, run_id="retry-1", final_answer="A"),
+            result_row(1, run_id="retry-2", final_answer="B"),
+        ]
+    )
+    original_path = tmp_path / "original.csv"
+    retry_path = tmp_path / "retry.csv"
+    original_results.to_csv(original_path, index=False)
+    retry_results.to_csv(retry_path, index=False)
+
+    with pytest.raises(ValueError, match="duplicate model/dilemma_id"):
+        merge_retry_results(
+            original_results_path=original_path,
+            retry_results_path=retry_path,
+            output_path=tmp_path / "merged.csv",
+        )
