@@ -2,7 +2,11 @@ from pathlib import Path
 
 import pandas as pd
 
-from moral_dilemmas.analysis import build_analysis_master
+from moral_dilemmas.analysis import (
+    build_analysis_master,
+    build_value_outcomes_long,
+)
+from moral_dilemmas.analysis.preparation import parse_value_labels
 from moral_dilemmas.data_loader import read_dataset_csv
 
 
@@ -88,3 +92,58 @@ def test_build_analysis_master_rejects_missing_required_columns(tmp_path: Path) 
         assert "missing required columns" in str(error)
     else:
         raise AssertionError("Expected missing required columns to raise ValueError.")
+
+
+def test_parse_value_labels_preserves_raw_distinct_labels() -> None:
+    assert parse_value_labels("['judgement', 'judgment', 'trust', 'trust']") == {
+        "judgement",
+        "judgment",
+        "trust",
+    }
+
+
+def test_build_value_outcomes_long_creates_value_level_rows(tmp_path: Path) -> None:
+    master_path = tmp_path / "analysis_master.csv"
+    output_path = tmp_path / "analysis" / "value_outcomes_long.csv"
+    pd.DataFrame(
+        [
+            {
+                **analysis_row(dilemma_id=2, model="model-b", final_answer=None),
+                "action_a_values": "['care', 'trust', 'trust']",
+                "action_b_values": "['fairness', 'trust']",
+            },
+            {
+                **analysis_row(dilemma_id=1, model="model-a", final_answer="B"),
+                "action_a_values": "['care', 'honesty']",
+                "action_b_values": "['fairness', 'honesty']",
+            },
+        ]
+    ).to_csv(master_path, index=False)
+
+    summary = build_value_outcomes_long(
+        master_dataset_path=master_path,
+        output_path=output_path,
+    )
+
+    value_outcomes = read_dataset_csv(output_path)
+    assert summary.input_observations == 2
+    assert summary.long_format_observations == 6
+    assert summary.unique_raw_values == 4
+    assert summary.missing_value_chosen == 3
+    assert value_outcomes[["dilemma_id", "model", "value"]].to_records(index=False).tolist() == [
+        (1, "model-a", "care"),
+        (1, "model-a", "fairness"),
+        (1, "model-a", "honesty"),
+        (2, "model-b", "care"),
+        (2, "model-b", "fairness"),
+        (2, "model-b", "trust"),
+    ]
+
+    model_a_rows = value_outcomes.loc[value_outcomes["model"] == "model-a"].set_index("value")
+    assert model_a_rows.loc["care", "value_chosen"] == 0
+    assert model_a_rows.loc["fairness", "value_chosen"] == 1
+    assert model_a_rows.loc["honesty", "is_contrastive"] == 0
+
+    model_b_rows = value_outcomes.loc[value_outcomes["model"] == "model-b"]
+    assert model_b_rows["value_chosen"].isna().all()
+    assert "Found 3 value rows without a selected final answer." in summary.warnings
