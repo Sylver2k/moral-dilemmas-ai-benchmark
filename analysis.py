@@ -2,9 +2,13 @@ from pathlib import Path
 
 from src.moral_dilemmas.analysis import (
     build_analysis_master,
+    build_contrastive_value_summary,
     build_value_outcomes_long,
+    build_value_prevalence_summary,
+    format_contrastive_value_summary,
     format_master_dataset_summary,
     format_value_outcomes_summary,
+    format_value_prevalence_summary,
 )
 
 PROJECT_ROOT = Path(__file__).resolve().parent
@@ -12,6 +16,8 @@ RESULTS_DIR = PROJECT_ROOT / "data" / "results"
 ANALYSIS_DATA_DIR = PROJECT_ROOT / "data" / "analysis"
 ANALYSIS_MASTER_PATH = ANALYSIS_DATA_DIR / "analysis_master.csv"
 VALUE_OUTCOMES_LONG_PATH = ANALYSIS_DATA_DIR / "value_outcomes_long.csv"
+VALUE_PREVALENCE_SUMMARY_PATH = ANALYSIS_DATA_DIR / "value_prevalence_summary.csv"
+CONTRASTIVE_VALUE_SUMMARY_PATH = ANALYSIS_DATA_DIR / "contrastive_value_summary.csv"
 
 
 def build_master_dataset() -> Path:
@@ -35,8 +41,36 @@ def build_value_outcomes_dataset() -> Path:
         overwrite=True,
     )
 
-    print()
+    print("---------")
     print(format_value_outcomes_summary(summary))
+
+    return summary.output_path
+
+
+def build_value_prevalence_dataset() -> Path:
+    """Build the descriptive value prevalence summary."""
+    summary = build_value_prevalence_summary(
+        value_outcomes_path=VALUE_OUTCOMES_LONG_PATH,
+        output_path=VALUE_PREVALENCE_SUMMARY_PATH,
+        overwrite=True,
+    )
+
+    print("---------")
+    print(format_value_prevalence_summary(summary))
+
+    return summary.output_path
+
+
+def build_contrastive_value_dataset() -> Path:
+    """Build the contrastive value selection-rate summary."""
+    summary = build_contrastive_value_summary(
+        value_outcomes_path=VALUE_OUTCOMES_LONG_PATH,
+        output_path=CONTRASTIVE_VALUE_SUMMARY_PATH,
+        overwrite=True,
+    )
+
+    print("---------")
+    print(format_contrastive_value_summary(summary))
 
     return summary.output_path
 
@@ -44,6 +78,8 @@ def build_value_outcomes_dataset() -> Path:
 def prepare_analysis_data() -> None:
     build_master_dataset()
     build_value_outcomes_dataset()
+    build_value_prevalence_dataset()
+    build_contrastive_value_dataset()
 
 
 if __name__ == "__main__":
