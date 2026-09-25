@@ -205,7 +205,7 @@ def _create_contrastive_ci(
     upper = np.nanquantile(bootstrap_rates, CI_UPPER_QUANTILE, axis=0)
     interval_rows = _interval_rows(models=models, values=values, lower=lower, upper=upper)
     result = eligible_summary.merge(interval_rows, on=["model", "value"], how="left")
-    
+
     return (
         result.loc[:, CONTRASTIVE_CI_COLUMNS]
         .sort_values(["model", "contrastive_selection_rate"], ascending=[True, False])
