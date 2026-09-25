@@ -2,9 +2,11 @@ from pathlib import Path
 
 from src.moral_dilemmas.analysis import (
     build_analysis_master,
+    build_bootstrap_datasets,
     build_contrastive_value_summary,
     build_value_outcomes_long,
     build_value_prevalence_summary,
+    format_bootstrap_run_summary,
     format_contrastive_value_summary,
     format_master_dataset_summary,
     format_value_outcomes_summary,
@@ -18,6 +20,9 @@ ANALYSIS_MASTER_PATH = ANALYSIS_DATA_DIR / "analysis_master.csv"
 VALUE_OUTCOMES_LONG_PATH = ANALYSIS_DATA_DIR / "value_outcomes_long.csv"
 VALUE_PREVALENCE_SUMMARY_PATH = ANALYSIS_DATA_DIR / "value_prevalence_summary.csv"
 CONTRASTIVE_VALUE_SUMMARY_PATH = ANALYSIS_DATA_DIR / "contrastive_value_summary.csv"
+BOOTSTRAP_PREVALENCE_CI_PATH = ANALYSIS_DATA_DIR / "bootstrap_prevalence_ci.csv"
+BOOTSTRAP_CONTRASTIVE_CI_PATH = ANALYSIS_DATA_DIR / "bootstrap_contrastive_ci.csv"
+BOOTSTRAP_MODEL_DIFFERENCES_PATH = ANALYSIS_DATA_DIR / "bootstrap_model_differences.csv"
 
 
 def build_master_dataset() -> Path:
@@ -75,6 +80,28 @@ def build_contrastive_value_dataset() -> Path:
     return summary.output_path
 
 
+def build_bootstrap_analysis_datasets() -> tuple[Path, Path, Path]:
+    """Build bootstrap confidence intervals and model-difference artifacts."""
+    summary = build_bootstrap_datasets(
+        value_outcomes_path=VALUE_OUTCOMES_LONG_PATH,
+        value_prevalence_path=VALUE_PREVALENCE_SUMMARY_PATH,
+        contrastive_value_path=CONTRASTIVE_VALUE_SUMMARY_PATH,
+        prevalence_output_path=BOOTSTRAP_PREVALENCE_CI_PATH,
+        contrastive_output_path=BOOTSTRAP_CONTRASTIVE_CI_PATH,
+        model_differences_output_path=BOOTSTRAP_MODEL_DIFFERENCES_PATH,
+        overwrite=True,
+    )
+
+    print("---------")
+    print(format_bootstrap_run_summary(summary))
+
+    return (
+        summary.prevalence_output_path,
+        summary.contrastive_output_path,
+        summary.model_differences_output_path,
+    )
+
+
 def prepare_analysis_data() -> None:
     build_master_dataset()
     build_value_outcomes_dataset()
@@ -84,3 +111,4 @@ def prepare_analysis_data() -> None:
 
 if __name__ == "__main__":
     prepare_analysis_data()
+    # build_bootstrap_analysis_datasets()
