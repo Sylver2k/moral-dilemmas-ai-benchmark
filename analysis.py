@@ -4,10 +4,12 @@ from src.moral_dilemmas.analysis import (
     build_analysis_master,
     build_bootstrap_datasets,
     build_contrastive_value_summary,
+    build_glmm_input_dataset,
     build_value_outcomes_long,
     build_value_prevalence_summary,
     format_bootstrap_run_summary,
     format_contrastive_value_summary,
+    format_glmm_input_summary,
     format_master_dataset_summary,
     format_value_outcomes_summary,
     format_value_prevalence_summary,
@@ -20,6 +22,7 @@ ANALYSIS_MASTER_PATH = ANALYSIS_DATA_DIR / "analysis_master.csv"
 VALUE_OUTCOMES_LONG_PATH = ANALYSIS_DATA_DIR / "value_outcomes_long.csv"
 VALUE_PREVALENCE_SUMMARY_PATH = ANALYSIS_DATA_DIR / "value_prevalence_summary.csv"
 CONTRASTIVE_VALUE_SUMMARY_PATH = ANALYSIS_DATA_DIR / "contrastive_value_summary.csv"
+GLMM_INPUT_PATH = ANALYSIS_DATA_DIR / "glmm_input.csv"
 BOOTSTRAP_PREVALENCE_CI_PATH = ANALYSIS_DATA_DIR / "bootstrap_prevalence_ci.csv"
 BOOTSTRAP_CONTRASTIVE_CI_PATH = ANALYSIS_DATA_DIR / "bootstrap_contrastive_ci.csv"
 BOOTSTRAP_MODEL_DIFFERENCES_PATH = ANALYSIS_DATA_DIR / "bootstrap_model_differences.csv"
@@ -80,6 +83,21 @@ def build_contrastive_value_dataset() -> Path:
     return summary.output_path
 
 
+def build_glmm_input_dataset_for_r() -> Path:
+    """Build the R input dataset for later GLMM analysis."""
+    summary = build_glmm_input_dataset(
+        value_outcomes_path=VALUE_OUTCOMES_LONG_PATH,
+        contrastive_value_path=CONTRASTIVE_VALUE_SUMMARY_PATH,
+        output_path=GLMM_INPUT_PATH,
+        overwrite=True,
+    )
+
+    print("---------")
+    print(format_glmm_input_summary(summary))
+
+    return summary.output_path
+
+
 def build_bootstrap_analysis_datasets() -> tuple[Path, Path, Path]:
     """Build bootstrap confidence intervals and model-difference artifacts."""
     summary = build_bootstrap_datasets(
@@ -107,6 +125,7 @@ def prepare_analysis_data() -> None:
     build_value_outcomes_dataset()
     build_value_prevalence_dataset()
     build_contrastive_value_dataset()
+    build_glmm_input_dataset_for_r()
 
 
 if __name__ == "__main__":
