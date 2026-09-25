@@ -78,7 +78,9 @@ def _create_glmm_input(value_outcomes: pd.DataFrame, eligible_values: list[str])
         value_outcomes["value"].isin(eligible_values) & value_outcomes["is_contrastive"].eq(1),
         GLMM_INPUT_COLUMNS,
     ].copy()
-    glmm_input["value_chosen"] = glmm_input["value_chosen"].astype(int) # export the GLMM outcome as binary integers.
+    glmm_input["value_chosen"] = glmm_input["value_chosen"].astype(
+        int
+    )  # export the GLMM outcome as binary integers.
 
     return glmm_input.sort_values(["value", "dilemma_id", "model"]).reset_index(drop=True)
 
