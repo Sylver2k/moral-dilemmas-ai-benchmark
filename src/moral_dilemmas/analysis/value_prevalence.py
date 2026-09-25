@@ -150,7 +150,7 @@ def _create_value_prevalence_summary(value_outcomes: pd.DataFrame) -> pd.DataFra
         ascending=[True, False, True],
     ).reset_index(drop=True)
     summary["rank"] = summary.groupby("model").cumcount() + 1
-    
+
     return summary.loc[:, VALUE_PREVALENCE_COLUMNS]
 
 
