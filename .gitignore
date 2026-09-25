@@ -219,3 +219,7 @@ __marimo__/
 
 # Datasets
 data/
+
+# R session state
+.RData
+.Rhistory
