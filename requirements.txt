@@ -1,6 +1,7 @@
 # Data handling
 pandas>=2.2,<4
 numpy>=2,<3
+openpyxl>=3.1,<4
 
 # Statistical analysis
 scipy>=1.14,<2
