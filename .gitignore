@@ -223,3 +223,6 @@ data/
 # R session state
 .RData
 .Rhistory
+
+# Result figures
+analysis/figures
