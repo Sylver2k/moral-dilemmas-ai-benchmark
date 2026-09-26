@@ -5,6 +5,11 @@ from .bootstrap import (
     build_bootstrap_datasets,
     format_bootstrap_run_summary,
 )
+from .final_workbook import (
+    FinalWorkbookSummary,
+    build_final_analysis_workbook,
+    format_final_workbook_summary,
+)
 from .glmm_input import (
     GlmmInputSummary,
     build_glmm_input_dataset,
@@ -30,6 +35,7 @@ from .value_prevalence import (
 __all__ = [
     "BootstrapRunSummary",
     "ContrastiveValueSummary",
+    "FinalWorkbookSummary",
     "GlmmInputSummary",
     "MasterDatasetSummary",
     "ValuePrevalenceSummary",
@@ -37,11 +43,13 @@ __all__ = [
     "build_analysis_master",
     "build_bootstrap_datasets",
     "build_contrastive_value_summary",
+    "build_final_analysis_workbook",
     "build_glmm_input_dataset",
     "build_value_prevalence_summary",
     "build_value_outcomes_long",
     "format_bootstrap_run_summary",
     "format_contrastive_value_summary",
+    "format_final_workbook_summary",
     "format_glmm_input_summary",
     "format_master_dataset_summary",
     "format_value_prevalence_summary",

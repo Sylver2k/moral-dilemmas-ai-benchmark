@@ -4,11 +4,13 @@ from src.moral_dilemmas.analysis import (
     build_analysis_master,
     build_bootstrap_datasets,
     build_contrastive_value_summary,
+    build_final_analysis_workbook,
     build_glmm_input_dataset,
     build_value_outcomes_long,
     build_value_prevalence_summary,
     format_bootstrap_run_summary,
     format_contrastive_value_summary,
+    format_final_workbook_summary,
     format_glmm_input_summary,
     format_master_dataset_summary,
     format_value_outcomes_summary,
@@ -26,6 +28,9 @@ GLMM_INPUT_PATH = ANALYSIS_DATA_DIR / "glmm_input.csv"
 BOOTSTRAP_PREVALENCE_CI_PATH = ANALYSIS_DATA_DIR / "bootstrap_prevalence_ci.csv"
 BOOTSTRAP_CONTRASTIVE_CI_PATH = ANALYSIS_DATA_DIR / "bootstrap_contrastive_ci.csv"
 BOOTSTRAP_MODEL_DIFFERENCES_PATH = ANALYSIS_DATA_DIR / "bootstrap_model_differences.csv"
+GLMM_GLOBAL_RESULTS_ADJUSTED_PATH = ANALYSIS_DATA_DIR / "glmm_global_results_adjusted.csv"
+GLMM_PAIRWISE_RESULTS_PATH = ANALYSIS_DATA_DIR / "glmm_pairwise_results.csv"
+FINAL_ANALYSIS_WORKBOOK_PATH = ANALYSIS_DATA_DIR / "final_analysis_results.xlsx"
 
 
 def build_master_dataset() -> Path:
@@ -120,6 +125,25 @@ def build_bootstrap_analysis_datasets() -> tuple[Path, Path, Path]:
     )
 
 
+def build_final_analysis_workbook_file() -> Path:
+    """Build the consolidated final analysis Excel workbook."""
+    summary = build_final_analysis_workbook(
+        value_prevalence_path=VALUE_PREVALENCE_SUMMARY_PATH,
+        bootstrap_prevalence_path=BOOTSTRAP_PREVALENCE_CI_PATH,
+        contrastive_value_path=CONTRASTIVE_VALUE_SUMMARY_PATH,
+        bootstrap_contrastive_path=BOOTSTRAP_CONTRASTIVE_CI_PATH,
+        global_glmm_path=GLMM_GLOBAL_RESULTS_ADJUSTED_PATH,
+        pairwise_path=GLMM_PAIRWISE_RESULTS_PATH,
+        bootstrap_model_differences_path=BOOTSTRAP_MODEL_DIFFERENCES_PATH,
+        output_path=FINAL_ANALYSIS_WORKBOOK_PATH,
+    )
+
+    print("---------")
+    print(format_final_workbook_summary(summary))
+
+    return summary.output_path
+
+
 def prepare_analysis_data() -> None:
     build_master_dataset()
     build_value_outcomes_dataset()
@@ -131,3 +155,4 @@ def prepare_analysis_data() -> None:
 if __name__ == "__main__":
     prepare_analysis_data()
     # build_bootstrap_analysis_datasets()
+    # build_final_analysis_workbook_file()
