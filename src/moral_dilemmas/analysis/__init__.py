@@ -5,6 +5,10 @@ from .bootstrap import (
     build_bootstrap_datasets,
     format_bootstrap_run_summary,
 )
+from .figures import (
+    FigureBuildSummary,
+    build_final_figures,
+)
 from .final_workbook import (
     FinalWorkbookSummary,
     build_final_analysis_workbook,
@@ -36,6 +40,7 @@ __all__ = [
     "BootstrapRunSummary",
     "ContrastiveValueSummary",
     "FinalWorkbookSummary",
+    "FigureBuildSummary",
     "GlmmInputSummary",
     "MasterDatasetSummary",
     "ValuePrevalenceSummary",
@@ -44,6 +49,7 @@ __all__ = [
     "build_bootstrap_datasets",
     "build_contrastive_value_summary",
     "build_final_analysis_workbook",
+    "build_final_figures",
     "build_glmm_input_dataset",
     "build_value_prevalence_summary",
     "build_value_outcomes_long",

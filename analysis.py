@@ -5,6 +5,7 @@ from src.moral_dilemmas.analysis import (
     build_bootstrap_datasets,
     build_contrastive_value_summary,
     build_final_analysis_workbook,
+    build_final_figures,
     build_glmm_input_dataset,
     build_value_outcomes_long,
     build_value_prevalence_summary,
@@ -31,6 +32,7 @@ BOOTSTRAP_MODEL_DIFFERENCES_PATH = ANALYSIS_DATA_DIR / "bootstrap_model_differen
 GLMM_GLOBAL_RESULTS_ADJUSTED_PATH = ANALYSIS_DATA_DIR / "glmm_global_results_adjusted.csv"
 GLMM_PAIRWISE_RESULTS_PATH = ANALYSIS_DATA_DIR / "glmm_pairwise_results.csv"
 FINAL_ANALYSIS_WORKBOOK_PATH = ANALYSIS_DATA_DIR / "final_analysis_results.xlsx"
+FIGURES_DIR = PROJECT_ROOT / "analysis" / "figures"
 
 
 def build_master_dataset() -> Path:
@@ -144,6 +146,16 @@ def build_final_analysis_workbook_file() -> Path:
     return summary.output_path
 
 
+def build_final_figure_files() -> tuple[Path, ...]:
+    """Build the final publication-oriented analysis figures."""
+    summary = build_final_figures(
+        workbook_path=FINAL_ANALYSIS_WORKBOOK_PATH,
+        output_dir=FIGURES_DIR,
+    )
+
+    return summary.figure_paths
+
+
 def prepare_analysis_data() -> None:
     build_master_dataset()
     build_value_outcomes_dataset()
@@ -156,3 +168,4 @@ if __name__ == "__main__":
     prepare_analysis_data()
     # build_bootstrap_analysis_datasets()
     # build_final_analysis_workbook_file()
+    # build_final_figure_files()
