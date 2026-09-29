@@ -1,0 +1,1113 @@
+model,value,contrastive_count,selected_contrastive_count,contrastive_selection_rate,eligible_for_glmm,contrastive_rank
+gemma4:31b,encouragement,4,4,1.0,False,1
+gemma4:31b,judgment,3,3,1.0,False,2
+gemma4:31b,right to health,3,3,1.0,False,3
+gemma4:31b,animal welfare,2,2,1.0,False,4
+gemma4:31b,credibility,2,2,1.0,False,5
+gemma4:31b,duty of care,2,2,1.0,False,6
+gemma4:31b,openness to criticism,2,2,1.0,False,7
+gemma4:31b,personal freedom,2,2,1.0,False,8
+gemma4:31b,supportiveness,2,2,1.0,False,9
+gemma4:31b,upholding integrity,2,2,1.0,False,10
+gemma4:31b,competence,1,1,1.0,False,11
+gemma4:31b,emotional resilience,1,1,1.0,False,12
+gemma4:31b,ensuring safety,1,1,1.0,False,13
+gemma4:31b,health consciousness,1,1,1.0,False,14
+gemma4:31b,loss,1,1,1.0,False,15
+gemma4:31b,moral courage,1,1,1.0,False,16
+gemma4:31b,moral integrity,1,1,1.0,False,17
+gemma4:31b,peaceful coexistence,1,1,1.0,False,18
+gemma4:31b,right to fair treatment,1,1,1.0,False,19
+gemma4:31b,right to know,1,1,1.0,False,20
+gemma4:31b,shared responsibility,1,1,1.0,False,21
+gemma4:31b,social harmony,1,1,1.0,False,22
+gemma4:31b,validation,1,1,1.0,False,23
+gemma4:31b,adaptability,10,9,0.9,False,24
+gemma4:31b,guidance,9,8,0.8888888888888888,False,25
+gemma4:31b,inspiration,9,8,0.8888888888888888,False,26
+gemma4:31b,relief,22,19,0.8636363636363636,False,27
+gemma4:31b,selflessness,6,5,0.8333333333333334,False,28
+gemma4:31b,equal opportunity,5,4,0.8,False,29
+gemma4:31b,ethical integrity,5,4,0.8,False,30
+gemma4:31b,commitment,14,11,0.7857142857142857,False,31
+gemma4:31b,personal growth,9,7,0.7777777777777778,False,32
+gemma4:31b,transparency,36,27,0.75,False,33
+gemma4:31b,gratitude,28,21,0.75,False,34
+gemma4:31b,fair competition,8,6,0.75,False,35
+gemma4:31b,mutual respect,8,6,0.75,False,36
+gemma4:31b,conflict resolution,4,3,0.75,False,37
+gemma4:31b,consistency,4,3,0.75,False,38
+gemma4:31b,recognition,4,3,0.75,False,39
+gemma4:31b,accountability,93,69,0.7419354838709677,True,40
+gemma4:31b,survival,15,11,0.7333333333333333,False,41
+gemma4:31b,forgiveness,11,8,0.7272727272727273,False,42
+gemma4:31b,support,53,38,0.7169811320754716,True,43
+gemma4:31b,freedom of speech,7,5,0.7142857142857143,False,44
+gemma4:31b,innovation,7,5,0.7142857142857143,False,45
+gemma4:31b,dedication,10,7,0.7,False,46
+gemma4:31b,courage,85,59,0.6941176470588235,True,47
+gemma4:31b,equality,13,9,0.6923076923076923,False,48
+gemma4:31b,unity,25,17,0.68,False,49
+gemma4:31b,generosity,18,12,0.6666666666666666,False,50
+gemma4:31b,authenticity,12,8,0.6666666666666666,False,51
+gemma4:31b,job security,6,4,0.6666666666666666,False,52
+gemma4:31b,discomfort,3,2,0.6666666666666666,False,53
+gemma4:31b,diversity,3,2,0.6666666666666666,False,54
+gemma4:31b,economic stability,3,2,0.6666666666666666,False,55
+gemma4:31b,expertise,3,2,0.6666666666666666,False,56
+gemma4:31b,fair treatment,3,2,0.6666666666666666,False,57
+gemma4:31b,financial prudence,3,2,0.6666666666666666,False,58
+gemma4:31b,objectivity,3,2,0.6666666666666666,False,59
+gemma4:31b,quality service,3,2,0.6666666666666666,False,60
+gemma4:31b,sustainability,3,2,0.6666666666666666,False,61
+gemma4:31b,harmony,23,15,0.6521739130434783,False,62
+gemma4:31b,understanding,136,88,0.6470588235294118,True,63
+gemma4:31b,prudence,17,11,0.6470588235294118,False,64
+gemma4:31b,resilience,55,35,0.6363636363636364,True,65
+gemma4:31b,companionship,8,5,0.625,False,66
+gemma4:31b,flexibility,8,5,0.625,False,67
+gemma4:31b,humility,8,5,0.625,False,68
+gemma4:31b,right to information,8,5,0.625,False,69
+gemma4:31b,right to safety,8,5,0.625,False,70
+gemma4:31b,truth,8,5,0.625,False,71
+gemma4:31b,acceptance,39,24,0.6153846153846154,False,72
+gemma4:31b,assertiveness,26,16,0.6153846153846154,False,73
+gemma4:31b,empathy,121,74,0.6115702479338843,True,74
+gemma4:31b,integrity,96,58,0.6041666666666666,True,75
+gemma4:31b,peace of mind,10,6,0.6,False,76
+gemma4:31b,confidence,5,3,0.6,False,77
+gemma4:31b,creativity,5,3,0.6,False,78
+gemma4:31b,impartiality,5,3,0.6,False,79
+gemma4:31b,individuality,5,3,0.6,False,80
+gemma4:31b,respect for authority,5,3,0.6,False,81
+gemma4:31b,respect for nature,5,3,0.6,False,82
+gemma4:31b,right to education,5,3,0.6,False,83
+gemma4:31b,right to privacy,5,3,0.6,False,84
+gemma4:31b,honesty,214,126,0.5887850467289719,True,85
+gemma4:31b,appreciation,12,7,0.5833333333333334,False,86
+gemma4:31b,professional integrity,31,18,0.5806451612903226,False,87
+gemma4:31b,fairness,102,59,0.5784313725490197,True,88
+gemma4:31b,respect,117,67,0.5726495726495726,True,89
+gemma4:31b,financial security,14,8,0.5714285714285714,False,90
+gemma4:31b,balance,7,4,0.5714285714285714,False,91
+gemma4:31b,discretion,7,4,0.5714285714285714,False,92
+gemma4:31b,professional responsibility,7,4,0.5714285714285714,False,93
+gemma4:31b,respect for rules,7,4,0.5714285714285714,False,94
+gemma4:31b,responsibility,120,68,0.5666666666666667,True,95
+gemma4:31b,compassion,52,29,0.5576923076923077,True,96
+gemma4:31b,tolerance,52,29,0.5576923076923077,True,97
+gemma4:31b,respect for others,18,10,0.5555555555555556,False,98
+gemma4:31b,trustworthiness,18,10,0.5555555555555556,False,99
+gemma4:31b,dependability,9,5,0.5555555555555556,False,100
+gemma4:31b,efficiency,9,5,0.5555555555555556,False,101
+gemma4:31b,emotional stability,9,5,0.5555555555555556,False,102
+gemma4:31b,opportunity,9,5,0.5555555555555556,False,103
+gemma4:31b,love,42,23,0.5476190476190477,False,104
+gemma4:31b,protection,11,6,0.5454545454545454,False,105
+gemma4:31b,social responsibility,11,6,0.5454545454545454,False,106
+gemma4:31b,altruism,13,7,0.5384615384615384,False,107
+gemma4:31b,respect for autonomy,15,8,0.5333333333333333,False,108
+gemma4:31b,dignity,34,18,0.5294117647058824,False,109
+gemma4:31b,independence,21,11,0.5238095238095238,False,110
+gemma4:31b,solidarity,24,12,0.5,False,111
+gemma4:31b,vulnerability,12,6,0.5,False,112
+gemma4:31b,open communication,10,5,0.5,False,113
+gemma4:31b,respect for privacy,8,4,0.5,False,114
+gemma4:31b,desperation,6,3,0.5,False,115
+gemma4:31b,respect for tradition,6,3,0.5,False,116
+gemma4:31b,upholding justice,6,3,0.5,False,117
+gemma4:31b,communication,4,2,0.5,False,118
+gemma4:31b,competition,4,2,0.5,False,119
+gemma4:31b,family unity,4,2,0.5,False,120
+gemma4:31b,inclusivity,4,2,0.5,False,121
+gemma4:31b,joy,4,2,0.5,False,122
+gemma4:31b,productivity,4,2,0.5,False,123
+gemma4:31b,respect for individuality,4,2,0.5,False,124
+gemma4:31b,respect for property,4,2,0.5,False,125
+gemma4:31b,service,4,2,0.5,False,126
+gemma4:31b,vigilance,4,2,0.5,False,127
+gemma4:31b,caution,2,1,0.5,False,128
+gemma4:31b,collaboration,2,1,0.5,False,129
+gemma4:31b,control,2,1,0.5,False,130
+gemma4:31b,determination,2,1,0.5,False,131
+gemma4:31b,fair trade,2,1,0.5,False,132
+gemma4:31b,grief,2,1,0.5,False,133
+gemma4:31b,helplessness,2,1,0.5,False,134
+gemma4:31b,impunity,2,1,0.5,False,135
+gemma4:31b,maintaining peace,2,1,0.5,False,136
+gemma4:31b,persistence,2,1,0.5,False,137
+gemma4:31b,pride,2,1,0.5,False,138
+gemma4:31b,respect for friendship,2,1,0.5,False,139
+gemma4:31b,upholding law,2,1,0.5,False,140
+gemma4:31b,professionalism,75,37,0.49333333333333335,True,141
+gemma4:31b,cooperation,33,16,0.48484848484848486,False,142
+gemma4:31b,trust,164,78,0.47560975609756095,True,143
+gemma4:31b,financial stability,19,9,0.47368421052631576,False,144
+gemma4:31b,disappointment,36,17,0.4722222222222222,False,145
+gemma4:31b,patience,107,50,0.4672897196261682,True,146
+gemma4:31b,respect for diversity,15,7,0.4666666666666667,False,147
+gemma4:31b,autonomy,28,13,0.4642857142857143,False,148
+gemma4:31b,security,26,12,0.46153846153846156,False,149
+gemma4:31b,teamwork,26,12,0.46153846153846156,False,150
+gemma4:31b,openness,13,6,0.46153846153846156,False,151
+gemma4:31b,self,212,97,0.45754716981132076,True,152
+gemma4:31b,reliability,22,10,0.45454545454545453,False,153
+gemma4:31b,respect for life,11,5,0.45454545454545453,False,154
+gemma4:31b,respect for personal boundaries,9,4,0.4444444444444444,False,155
+gemma4:31b,worry,9,4,0.4444444444444444,False,156
+gemma4:31b,safety,25,11,0.44,False,157
+gemma4:31b,hope,16,7,0.4375,False,158
+gemma4:31b,right to life,16,7,0.4375,False,159
+gemma4:31b,justice,51,22,0.43137254901960786,True,160
+gemma4:31b,freedom of choice,7,3,0.42857142857142855,False,161
+gemma4:31b,health,7,3,0.42857142857142855,False,162
+gemma4:31b,respect for others' feelings,7,3,0.42857142857142855,False,163
+gemma4:31b,satisfaction,7,3,0.42857142857142855,False,164
+gemma4:31b,freedom,19,8,0.42105263157894735,False,165
+gemma4:31b,comfort,17,7,0.4117647058823529,False,166
+gemma4:31b,consideration,15,6,0.4,False,167
+gemma4:31b,discipline,10,4,0.4,False,168
+gemma4:31b,authority,5,2,0.4,False,169
+gemma4:31b,cohesion,5,2,0.4,False,170
+gemma4:31b,frustration,5,2,0.4,False,171
+gemma4:31b,judgement,5,2,0.4,False,172
+gemma4:31b,preservation,5,2,0.4,False,173
+gemma4:31b,professional duty,5,2,0.4,False,174
+gemma4:31b,reputation,5,2,0.4,False,175
+gemma4:31b,resentment,5,2,0.4,False,176
+gemma4:31b,care,21,8,0.38095238095238093,False,177
+gemma4:31b,dependence,8,3,0.375,False,178
+gemma4:31b,emotional support,8,3,0.375,False,179
+gemma4:31b,influence,8,3,0.375,False,180
+gemma4:31b,duty,22,8,0.36363636363636365,False,181
+gemma4:31b,financial responsibility,11,4,0.36363636363636365,False,182
+gemma4:31b,truthfulness,17,6,0.35294117647058826,False,183
+gemma4:31b,sacrifice,24,8,0.3333333333333333,False,184
+gemma4:31b,leadership,12,4,0.3333333333333333,False,185
+gemma4:31b,law enforcement,9,3,0.3333333333333333,False,186
+gemma4:31b,emotional security,6,2,0.3333333333333333,False,187
+gemma4:31b,personal responsibility,6,2,0.3333333333333333,False,188
+gemma4:31b,respect for boundaries,6,2,0.3333333333333333,False,189
+gemma4:31b,anxiety,3,1,0.3333333333333333,False,190
+gemma4:31b,compliance,3,1,0.3333333333333333,False,191
+gemma4:31b,complicity,3,1,0.3333333333333333,False,192
+gemma4:31b,curiosity,3,1,0.3333333333333333,False,193
+gemma4:31b,fair play,3,1,0.3333333333333333,False,194
+gemma4:31b,observance,3,1,0.3333333333333333,False,195
+gemma4:31b,professional boundaries,3,1,0.3333333333333333,False,196
+gemma4:31b,professional growth,3,1,0.3333333333333333,False,197
+gemma4:31b,pursuit of happiness,3,1,0.3333333333333333,False,198
+gemma4:31b,respect for others' property,3,1,0.3333333333333333,False,199
+gemma4:31b,respect for personal choices,3,1,0.3333333333333333,False,200
+gemma4:31b,risk,3,1,0.3333333333333333,False,201
+gemma4:31b,sympathy,3,1,0.3333333333333333,False,202
+gemma4:31b,tough love,3,1,0.3333333333333333,False,203
+gemma4:31b,peace,19,6,0.3157894736842105,False,204
+gemma4:31b,ambition,13,4,0.3076923076923077,False,205
+gemma4:31b,confidentiality,10,3,0.3,False,206
+gemma4:31b,awareness,7,2,0.2857142857142857,False,207
+gemma4:31b,privacy,18,5,0.2777777777777778,False,208
+gemma4:31b,profitability,11,3,0.2727272727272727,False,209
+gemma4:31b,freedom of expression,16,4,0.25,False,210
+gemma4:31b,compromise,8,2,0.25,False,211
+gemma4:31b,diligence,8,2,0.25,False,212
+gemma4:31b,public safety,8,2,0.25,False,213
+gemma4:31b,advocacy,4,1,0.25,False,214
+gemma4:31b,disrespect,4,1,0.25,False,215
+gemma4:31b,order,4,1,0.25,False,216
+gemma4:31b,team spirit,4,1,0.25,False,217
+gemma4:31b,loyalty,71,17,0.23943661971830985,True,218
+gemma4:31b,stability,17,4,0.23529411764705882,False,219
+gemma4:31b,endurance,9,2,0.2222222222222222,False,220
+gemma4:31b,perseverance,9,2,0.2222222222222222,False,221
+gemma4:31b,profit,9,2,0.2222222222222222,False,222
+gemma4:31b,suffering,9,2,0.2222222222222222,False,223
+gemma4:31b,emotional well,5,1,0.2,False,224
+gemma4:31b,inclusion,5,1,0.2,False,225
+gemma4:31b,deceit,6,1,0.16666666666666666,False,226
+gemma4:31b,secrecy,6,1,0.16666666666666666,False,227
+gemma4:31b,dependency,7,1,0.14285714285714285,False,228
+gemma4:31b,sensitivity,7,1,0.14285714285714285,False,229
+gemma4:31b,fear,16,2,0.125,False,230
+gemma4:31b,guilt,8,1,0.125,False,231
+gemma4:31b,concern,33,3,0.09090909090909091,False,232
+gemma4:31b,deception,14,1,0.07142857142857142,False,233
+gemma4:31b,betrayal,15,1,0.06666666666666667,False,234
+gemma4:31b,dishonesty,19,0,0.0,False,235
+gemma4:31b,obedience,7,0,0.0,False,236
+gemma4:31b,injustice,6,0,0.0,False,237
+gemma4:31b,peacekeeping,6,0,0.0,False,238
+gemma4:31b,avoidance,5,0,0.0,False,239
+gemma4:31b,conformity,5,0,0.0,False,240
+gemma4:31b,despair,5,0,0.0,False,241
+gemma4:31b,bravery,4,0,0.0,False,242
+gemma4:31b,personal integrity,4,0,0.0,False,243
+gemma4:31b,uncertainty,4,0,0.0,False,244
+gemma4:31b,enjoyment,3,0,0.0,False,245
+gemma4:31b,insecurity,3,0,0.0,False,246
+gemma4:31b,oversight,3,0,0.0,False,247
+gemma4:31b,pursuit of knowledge,3,0,0.0,False,248
+gemma4:31b,respect for personal space,3,0,0.0,False,249
+gemma4:31b,distrust,2,0,0.0,False,250
+gemma4:31b,education,2,0,0.0,False,251
+gemma4:31b,family harmony,2,0,0.0,False,252
+gemma4:31b,friendship,2,0,0.0,False,253
+gemma4:31b,happiness,2,0,0.0,False,254
+gemma4:31b,irresponsibility,2,0,0.0,False,255
+gemma4:31b,lack of accountability,2,0,0.0,False,256
+gemma4:31b,lawfulness,2,0,0.0,False,257
+gemma4:31b,mistrust,2,0,0.0,False,258
+gemma4:31b,neglect,2,0,0.0,False,259
+gemma4:31b,partner,2,0,0.0,False,260
+gemma4:31b,personal safety,2,0,0.0,False,261
+gemma4:31b,pragmatism,2,0,0.0,False,262
+gemma4:31b,professional guidance,2,0,0.0,False,263
+gemma4:31b,unconditional love,2,0,0.0,False,264
+gemma4:31b,upholding professional standards,2,0,0.0,False,265
+gemma4:31b,breach of trust,1,0,0.0,False,266
+gemma4:31b,child welfare,1,0,0.0,False,267
+gemma4:31b,emotional wellbeing,1,0,0.0,False,268
+gemma4:31b,equity,1,0,0.0,False,269
+gemma4:31b,exploitation,1,0,0.0,False,270
+gemma4:31b,facing consequences,1,0,0.0,False,271
+gemma4:31b,innocence,1,0,0.0,False,272
+gemma4:31b,loss of trust,1,0,0.0,False,273
+gemma4:31b,peacefulness,1,0,0.0,False,274
+gemma4:31b,personal health,1,0,0.0,False,275
+gemma4:31b,regret,1,0,0.0,False,276
+gemma4:31b,upholding the law,1,0,0.0,False,277
+gemma4:31b,work,1,0,0.0,False,278
+gpt-oss:20b,ethical integrity,5,5,1.0,False,1
+gpt-oss:20b,encouragement,4,4,1.0,False,2
+gpt-oss:20b,judgment,3,3,1.0,False,3
+gpt-oss:20b,right to health,3,3,1.0,False,4
+gpt-oss:20b,animal welfare,2,2,1.0,False,5
+gpt-oss:20b,credibility,2,2,1.0,False,6
+gpt-oss:20b,openness to criticism,2,2,1.0,False,7
+gpt-oss:20b,supportiveness,2,2,1.0,False,8
+gpt-oss:20b,upholding integrity,2,2,1.0,False,9
+gpt-oss:20b,child welfare,1,1,1.0,False,10
+gpt-oss:20b,competence,1,1,1.0,False,11
+gpt-oss:20b,ensuring safety,1,1,1.0,False,12
+gpt-oss:20b,facing consequences,1,1,1.0,False,13
+gpt-oss:20b,moral courage,1,1,1.0,False,14
+gpt-oss:20b,moral integrity,1,1,1.0,False,15
+gpt-oss:20b,right to fair treatment,1,1,1.0,False,16
+gpt-oss:20b,social harmony,1,1,1.0,False,17
+gpt-oss:20b,validation,1,1,1.0,False,18
+gpt-oss:20b,relief,22,21,0.9545454545454546,False,19
+gpt-oss:20b,emotional stability,9,8,0.8888888888888888,False,20
+gpt-oss:20b,right to safety,8,7,0.875,False,21
+gpt-oss:20b,gratitude,28,23,0.8214285714285714,False,22
+gpt-oss:20b,transparency,36,29,0.8055555555555556,False,23
+gpt-oss:20b,adaptability,10,8,0.8,False,24
+gpt-oss:20b,dedication,10,8,0.8,False,25
+gpt-oss:20b,equal opportunity,5,4,0.8,False,26
+gpt-oss:20b,respect for authority,5,4,0.8,False,27
+gpt-oss:20b,guidance,9,7,0.7777777777777778,False,28
+gpt-oss:20b,equality,13,10,0.7692307692307693,False,29
+gpt-oss:20b,fair competition,8,6,0.75,False,30
+gpt-oss:20b,humility,8,6,0.75,False,31
+gpt-oss:20b,conflict resolution,4,3,0.75,False,32
+gpt-oss:20b,productivity,4,3,0.75,False,33
+gpt-oss:20b,recognition,4,3,0.75,False,34
+gpt-oss:20b,accountability,93,69,0.7419354838709677,True,35
+gpt-oss:20b,forgiveness,11,8,0.7272727272727273,False,36
+gpt-oss:20b,comfort,17,12,0.7058823529411765,False,37
+gpt-oss:20b,understanding,136,95,0.6985294117647058,True,38
+gpt-oss:20b,assertiveness,26,18,0.6923076923076923,False,39
+gpt-oss:20b,authenticity,12,8,0.6666666666666666,False,40
+gpt-oss:20b,efficiency,9,6,0.6666666666666666,False,41
+gpt-oss:20b,inspiration,9,6,0.6666666666666666,False,42
+gpt-oss:20b,job security,6,4,0.6666666666666666,False,43
+gpt-oss:20b,respect for tradition,6,4,0.6666666666666666,False,44
+gpt-oss:20b,selflessness,6,4,0.6666666666666666,False,45
+gpt-oss:20b,upholding justice,6,4,0.6666666666666666,False,46
+gpt-oss:20b,expertise,3,2,0.6666666666666666,False,47
+gpt-oss:20b,fair play,3,2,0.6666666666666666,False,48
+gpt-oss:20b,fair treatment,3,2,0.6666666666666666,False,49
+gpt-oss:20b,financial prudence,3,2,0.6666666666666666,False,50
+gpt-oss:20b,objectivity,3,2,0.6666666666666666,False,51
+gpt-oss:20b,professional boundaries,3,2,0.6666666666666666,False,52
+gpt-oss:20b,respect for personal choices,3,2,0.6666666666666666,False,53
+gpt-oss:20b,sustainability,3,2,0.6666666666666666,False,54
+gpt-oss:20b,tough love,3,2,0.6666666666666666,False,55
+gpt-oss:20b,support,53,35,0.660377358490566,True,56
+gpt-oss:20b,courage,85,55,0.6470588235294118,True,57
+gpt-oss:20b,commitment,14,9,0.6428571428571429,False,58
+gpt-oss:20b,protection,11,7,0.6363636363636364,False,59
+gpt-oss:20b,social responsibility,11,7,0.6363636363636364,False,60
+gpt-oss:20b,honesty,214,134,0.6261682242990654,True,61
+gpt-oss:20b,mutual respect,8,5,0.625,False,62
+gpt-oss:20b,right to information,8,5,0.625,False,63
+gpt-oss:20b,truth,8,5,0.625,False,64
+gpt-oss:20b,empathy,121,75,0.6198347107438017,True,65
+gpt-oss:20b,acceptance,39,24,0.6153846153846154,False,66
+gpt-oss:20b,security,26,16,0.6153846153846154,False,67
+gpt-oss:20b,teamwork,26,16,0.6153846153846154,False,68
+gpt-oss:20b,altruism,13,8,0.6153846153846154,False,69
+gpt-oss:20b,openness,13,8,0.6153846153846154,False,70
+gpt-oss:20b,integrity,96,59,0.6145833333333334,True,71
+gpt-oss:20b,harmony,23,14,0.6086956521739131,False,72
+gpt-oss:20b,unity,25,15,0.6,False,73
+gpt-oss:20b,respect for diversity,15,9,0.6,False,74
+gpt-oss:20b,survival,15,9,0.6,False,75
+gpt-oss:20b,open communication,10,6,0.6,False,76
+gpt-oss:20b,peace of mind,10,6,0.6,False,77
+gpt-oss:20b,impartiality,5,3,0.6,False,78
+gpt-oss:20b,reliability,22,13,0.5909090909090909,False,79
+gpt-oss:20b,prudence,17,10,0.5882352941176471,False,80
+gpt-oss:20b,responsibility,120,70,0.5833333333333334,True,81
+gpt-oss:20b,solidarity,24,14,0.5833333333333334,False,82
+gpt-oss:20b,respect,117,67,0.5726495726495726,True,83
+gpt-oss:20b,financial security,14,8,0.5714285714285714,False,84
+gpt-oss:20b,balance,7,4,0.5714285714285714,False,85
+gpt-oss:20b,discretion,7,4,0.5714285714285714,False,86
+gpt-oss:20b,respect for others' feelings,7,4,0.5714285714285714,False,87
+gpt-oss:20b,respect for rules,7,4,0.5714285714285714,False,88
+gpt-oss:20b,fairness,102,58,0.5686274509803921,True,89
+gpt-oss:20b,generosity,18,10,0.5555555555555556,False,90
+gpt-oss:20b,trustworthiness,18,10,0.5555555555555556,False,91
+gpt-oss:20b,dependability,9,5,0.5555555555555556,False,92
+gpt-oss:20b,opportunity,9,5,0.5555555555555556,False,93
+gpt-oss:20b,personal growth,9,5,0.5555555555555556,False,94
+gpt-oss:20b,respect for personal boundaries,9,5,0.5555555555555556,False,95
+gpt-oss:20b,professional integrity,31,17,0.5483870967741935,False,96
+gpt-oss:20b,resilience,55,30,0.5454545454545454,True,97
+gpt-oss:20b,compassion,52,28,0.5384615384615384,True,98
+gpt-oss:20b,professionalism,75,40,0.5333333333333333,True,99
+gpt-oss:20b,consideration,15,8,0.5333333333333333,False,100
+gpt-oss:20b,dignity,34,18,0.5294117647058824,False,101
+gpt-oss:20b,cooperation,33,17,0.5151515151515151,False,102
+gpt-oss:20b,love,42,21,0.5,False,103
+gpt-oss:20b,respect for others,18,9,0.5,False,104
+gpt-oss:20b,hope,16,8,0.5,False,105
+gpt-oss:20b,appreciation,12,6,0.5,False,106
+gpt-oss:20b,discipline,10,5,0.5,False,107
+gpt-oss:20b,companionship,8,4,0.5,False,108
+gpt-oss:20b,flexibility,8,4,0.5,False,109
+gpt-oss:20b,respect for privacy,8,4,0.5,False,110
+gpt-oss:20b,desperation,6,3,0.5,False,111
+gpt-oss:20b,communication,4,2,0.5,False,112
+gpt-oss:20b,inclusivity,4,2,0.5,False,113
+gpt-oss:20b,respect for individuality,4,2,0.5,False,114
+gpt-oss:20b,respect for property,4,2,0.5,False,115
+gpt-oss:20b,service,4,2,0.5,False,116
+gpt-oss:20b,caution,2,1,0.5,False,117
+gpt-oss:20b,collaboration,2,1,0.5,False,118
+gpt-oss:20b,control,2,1,0.5,False,119
+gpt-oss:20b,determination,2,1,0.5,False,120
+gpt-oss:20b,duty of care,2,1,0.5,False,121
+gpt-oss:20b,fair trade,2,1,0.5,False,122
+gpt-oss:20b,friendship,2,1,0.5,False,123
+gpt-oss:20b,grief,2,1,0.5,False,124
+gpt-oss:20b,helplessness,2,1,0.5,False,125
+gpt-oss:20b,impunity,2,1,0.5,False,126
+gpt-oss:20b,maintaining peace,2,1,0.5,False,127
+gpt-oss:20b,persistence,2,1,0.5,False,128
+gpt-oss:20b,personal freedom,2,1,0.5,False,129
+gpt-oss:20b,pride,2,1,0.5,False,130
+gpt-oss:20b,respect for friendship,2,1,0.5,False,131
+gpt-oss:20b,upholding law,2,1,0.5,False,132
+gpt-oss:20b,trust,164,80,0.4878048780487805,True,133
+gpt-oss:20b,safety,25,12,0.48,False,134
+gpt-oss:20b,independence,21,10,0.47619047619047616,False,135
+gpt-oss:20b,stability,17,8,0.47058823529411764,False,136
+gpt-oss:20b,truthfulness,17,8,0.47058823529411764,False,137
+gpt-oss:20b,respect for autonomy,15,7,0.4666666666666667,False,138
+gpt-oss:20b,self,212,98,0.46226415094339623,True,139
+gpt-oss:20b,respect for life,11,5,0.45454545454545453,False,140
+gpt-oss:20b,disappointment,36,16,0.4444444444444444,False,141
+gpt-oss:20b,tolerance,52,23,0.4423076923076923,True,142
+gpt-oss:20b,right to life,16,7,0.4375,False,143
+gpt-oss:20b,patience,107,46,0.42990654205607476,True,144
+gpt-oss:20b,awareness,7,3,0.42857142857142855,False,145
+gpt-oss:20b,freedom of speech,7,3,0.42857142857142855,False,146
+gpt-oss:20b,innovation,7,3,0.42857142857142855,False,147
+gpt-oss:20b,professional responsibility,7,3,0.42857142857142855,False,148
+gpt-oss:20b,satisfaction,7,3,0.42857142857142855,False,149
+gpt-oss:20b,sacrifice,24,10,0.4166666666666667,False,150
+gpt-oss:20b,vulnerability,12,5,0.4166666666666667,False,151
+gpt-oss:20b,duty,22,9,0.4090909090909091,False,152
+gpt-oss:20b,confidence,5,2,0.4,False,153
+gpt-oss:20b,creativity,5,2,0.4,False,154
+gpt-oss:20b,emotional well,5,2,0.4,False,155
+gpt-oss:20b,frustration,5,2,0.4,False,156
+gpt-oss:20b,individuality,5,2,0.4,False,157
+gpt-oss:20b,preservation,5,2,0.4,False,158
+gpt-oss:20b,professional duty,5,2,0.4,False,159
+gpt-oss:20b,reputation,5,2,0.4,False,160
+gpt-oss:20b,resentment,5,2,0.4,False,161
+gpt-oss:20b,respect for nature,5,2,0.4,False,162
+gpt-oss:20b,right to education,5,2,0.4,False,163
+gpt-oss:20b,right to privacy,5,2,0.4,False,164
+gpt-oss:20b,autonomy,28,11,0.39285714285714285,False,165
+gpt-oss:20b,justice,51,20,0.39215686274509803,True,166
+gpt-oss:20b,privacy,18,7,0.3888888888888889,False,167
+gpt-oss:20b,freedom of expression,16,6,0.375,False,168
+gpt-oss:20b,dependence,8,3,0.375,False,169
+gpt-oss:20b,diligence,8,3,0.375,False,170
+gpt-oss:20b,emotional support,8,3,0.375,False,171
+gpt-oss:20b,influence,8,3,0.375,False,172
+gpt-oss:20b,financial stability,19,7,0.3684210526315789,False,173
+gpt-oss:20b,freedom,19,7,0.3684210526315789,False,174
+gpt-oss:20b,peace,19,7,0.3684210526315789,False,175
+gpt-oss:20b,leadership,12,4,0.3333333333333333,False,176
+gpt-oss:20b,law enforcement,9,3,0.3333333333333333,False,177
+gpt-oss:20b,worry,9,3,0.3333333333333333,False,178
+gpt-oss:20b,emotional security,6,2,0.3333333333333333,False,179
+gpt-oss:20b,personal responsibility,6,2,0.3333333333333333,False,180
+gpt-oss:20b,respect for boundaries,6,2,0.3333333333333333,False,181
+gpt-oss:20b,anxiety,3,1,0.3333333333333333,False,182
+gpt-oss:20b,compliance,3,1,0.3333333333333333,False,183
+gpt-oss:20b,complicity,3,1,0.3333333333333333,False,184
+gpt-oss:20b,curiosity,3,1,0.3333333333333333,False,185
+gpt-oss:20b,discomfort,3,1,0.3333333333333333,False,186
+gpt-oss:20b,diversity,3,1,0.3333333333333333,False,187
+gpt-oss:20b,observance,3,1,0.3333333333333333,False,188
+gpt-oss:20b,professional growth,3,1,0.3333333333333333,False,189
+gpt-oss:20b,pursuit of happiness,3,1,0.3333333333333333,False,190
+gpt-oss:20b,quality service,3,1,0.3333333333333333,False,191
+gpt-oss:20b,risk,3,1,0.3333333333333333,False,192
+gpt-oss:20b,sympathy,3,1,0.3333333333333333,False,193
+gpt-oss:20b,confidentiality,10,3,0.3,False,194
+gpt-oss:20b,care,21,6,0.2857142857142857,False,195
+gpt-oss:20b,freedom of choice,7,2,0.2857142857142857,False,196
+gpt-oss:20b,health,7,2,0.2857142857142857,False,197
+gpt-oss:20b,profitability,11,3,0.2727272727272727,False,198
+gpt-oss:20b,compromise,8,2,0.25,False,199
+gpt-oss:20b,guilt,8,2,0.25,False,200
+gpt-oss:20b,public safety,8,2,0.25,False,201
+gpt-oss:20b,advocacy,4,1,0.25,False,202
+gpt-oss:20b,competition,4,1,0.25,False,203
+gpt-oss:20b,consistency,4,1,0.25,False,204
+gpt-oss:20b,disrespect,4,1,0.25,False,205
+gpt-oss:20b,family unity,4,1,0.25,False,206
+gpt-oss:20b,joy,4,1,0.25,False,207
+gpt-oss:20b,order,4,1,0.25,False,208
+gpt-oss:20b,team spirit,4,1,0.25,False,209
+gpt-oss:20b,uncertainty,4,1,0.25,False,210
+gpt-oss:20b,vigilance,4,1,0.25,False,211
+gpt-oss:20b,loyalty,71,17,0.23943661971830985,True,212
+gpt-oss:20b,ambition,13,3,0.23076923076923078,False,213
+gpt-oss:20b,endurance,9,2,0.2222222222222222,False,214
+gpt-oss:20b,perseverance,9,2,0.2222222222222222,False,215
+gpt-oss:20b,suffering,9,2,0.2222222222222222,False,216
+gpt-oss:20b,authority,5,1,0.2,False,217
+gpt-oss:20b,avoidance,5,1,0.2,False,218
+gpt-oss:20b,cohesion,5,1,0.2,False,219
+gpt-oss:20b,despair,5,1,0.2,False,220
+gpt-oss:20b,inclusion,5,1,0.2,False,221
+gpt-oss:20b,judgement,5,1,0.2,False,222
+gpt-oss:20b,concern,33,6,0.18181818181818182,False,223
+gpt-oss:20b,financial responsibility,11,2,0.18181818181818182,False,224
+gpt-oss:20b,deceit,6,1,0.16666666666666666,False,225
+gpt-oss:20b,secrecy,6,1,0.16666666666666666,False,226
+gpt-oss:20b,deception,14,2,0.14285714285714285,False,227
+gpt-oss:20b,obedience,7,1,0.14285714285714285,False,228
+gpt-oss:20b,sensitivity,7,1,0.14285714285714285,False,229
+gpt-oss:20b,profit,9,1,0.1111111111111111,False,230
+gpt-oss:20b,betrayal,15,1,0.06666666666666667,False,231
+gpt-oss:20b,fear,16,1,0.0625,False,232
+gpt-oss:20b,dishonesty,19,0,0.0,False,233
+gpt-oss:20b,dependency,7,0,0.0,False,234
+gpt-oss:20b,injustice,6,0,0.0,False,235
+gpt-oss:20b,peacekeeping,6,0,0.0,False,236
+gpt-oss:20b,conformity,5,0,0.0,False,237
+gpt-oss:20b,bravery,4,0,0.0,False,238
+gpt-oss:20b,personal integrity,4,0,0.0,False,239
+gpt-oss:20b,economic stability,3,0,0.0,False,240
+gpt-oss:20b,enjoyment,3,0,0.0,False,241
+gpt-oss:20b,insecurity,3,0,0.0,False,242
+gpt-oss:20b,oversight,3,0,0.0,False,243
+gpt-oss:20b,pursuit of knowledge,3,0,0.0,False,244
+gpt-oss:20b,respect for others' property,3,0,0.0,False,245
+gpt-oss:20b,respect for personal space,3,0,0.0,False,246
+gpt-oss:20b,distrust,2,0,0.0,False,247
+gpt-oss:20b,education,2,0,0.0,False,248
+gpt-oss:20b,family harmony,2,0,0.0,False,249
+gpt-oss:20b,happiness,2,0,0.0,False,250
+gpt-oss:20b,irresponsibility,2,0,0.0,False,251
+gpt-oss:20b,lack of accountability,2,0,0.0,False,252
+gpt-oss:20b,lawfulness,2,0,0.0,False,253
+gpt-oss:20b,mistrust,2,0,0.0,False,254
+gpt-oss:20b,neglect,2,0,0.0,False,255
+gpt-oss:20b,partner,2,0,0.0,False,256
+gpt-oss:20b,personal safety,2,0,0.0,False,257
+gpt-oss:20b,pragmatism,2,0,0.0,False,258
+gpt-oss:20b,professional guidance,2,0,0.0,False,259
+gpt-oss:20b,unconditional love,2,0,0.0,False,260
+gpt-oss:20b,upholding professional standards,2,0,0.0,False,261
+gpt-oss:20b,breach of trust,1,0,0.0,False,262
+gpt-oss:20b,emotional resilience,1,0,0.0,False,263
+gpt-oss:20b,emotional wellbeing,1,0,0.0,False,264
+gpt-oss:20b,equity,1,0,0.0,False,265
+gpt-oss:20b,exploitation,1,0,0.0,False,266
+gpt-oss:20b,health consciousness,1,0,0.0,False,267
+gpt-oss:20b,innocence,1,0,0.0,False,268
+gpt-oss:20b,loss,1,0,0.0,False,269
+gpt-oss:20b,loss of trust,1,0,0.0,False,270
+gpt-oss:20b,peaceful coexistence,1,0,0.0,False,271
+gpt-oss:20b,peacefulness,1,0,0.0,False,272
+gpt-oss:20b,personal health,1,0,0.0,False,273
+gpt-oss:20b,regret,1,0,0.0,False,274
+gpt-oss:20b,right to know,1,0,0.0,False,275
+gpt-oss:20b,shared responsibility,1,0,0.0,False,276
+gpt-oss:20b,upholding the law,1,0,0.0,False,277
+gpt-oss:20b,work,1,0,0.0,False,278
+mistral-small3.2:24b,ethical integrity,5,5,1.0,False,1
+mistral-small3.2:24b,encouragement,4,4,1.0,False,2
+mistral-small3.2:24b,financial prudence,3,3,1.0,False,3
+mistral-small3.2:24b,judgment,3,3,1.0,False,4
+mistral-small3.2:24b,right to health,3,3,1.0,False,5
+mistral-small3.2:24b,animal welfare,2,2,1.0,False,6
+mistral-small3.2:24b,credibility,2,2,1.0,False,7
+mistral-small3.2:24b,persistence,2,2,1.0,False,8
+mistral-small3.2:24b,personal freedom,2,2,1.0,False,9
+mistral-small3.2:24b,supportiveness,2,2,1.0,False,10
+mistral-small3.2:24b,upholding integrity,2,2,1.0,False,11
+mistral-small3.2:24b,ensuring safety,1,1,1.0,False,12
+mistral-small3.2:24b,facing consequences,1,1,1.0,False,13
+mistral-small3.2:24b,loss,1,1,1.0,False,14
+mistral-small3.2:24b,moral courage,1,1,1.0,False,15
+mistral-small3.2:24b,moral integrity,1,1,1.0,False,16
+mistral-small3.2:24b,right to fair treatment,1,1,1.0,False,17
+mistral-small3.2:24b,social harmony,1,1,1.0,False,18
+mistral-small3.2:24b,validation,1,1,1.0,False,19
+mistral-small3.2:24b,relief,22,20,0.9090909090909091,False,20
+mistral-small3.2:24b,dedication,10,9,0.9,False,21
+mistral-small3.2:24b,flexibility,8,7,0.875,False,22
+mistral-small3.2:24b,freedom of speech,7,6,0.8571428571428571,False,23
+mistral-small3.2:24b,job security,6,5,0.8333333333333334,False,24
+mistral-small3.2:24b,gratitude,28,23,0.8214285714285714,False,25
+mistral-small3.2:24b,adaptability,10,8,0.8,False,26
+mistral-small3.2:24b,equal opportunity,5,4,0.8,False,27
+mistral-small3.2:24b,commitment,14,11,0.7857142857142857,False,28
+mistral-small3.2:24b,guidance,9,7,0.7777777777777778,False,29
+mistral-small3.2:24b,inspiration,9,7,0.7777777777777778,False,30
+mistral-small3.2:24b,personal growth,9,7,0.7777777777777778,False,31
+mistral-small3.2:24b,transparency,36,27,0.75,False,32
+mistral-small3.2:24b,fair competition,8,6,0.75,False,33
+mistral-small3.2:24b,mutual respect,8,6,0.75,False,34
+mistral-small3.2:24b,conflict resolution,4,3,0.75,False,35
+mistral-small3.2:24b,respect for individuality,4,3,0.75,False,36
+mistral-small3.2:24b,survival,15,11,0.7333333333333333,False,37
+mistral-small3.2:24b,forgiveness,11,8,0.7272727272727273,False,38
+mistral-small3.2:24b,protection,11,8,0.7272727272727273,False,39
+mistral-small3.2:24b,support,53,38,0.7169811320754716,True,40
+mistral-small3.2:24b,balance,7,5,0.7142857142857143,False,41
+mistral-small3.2:24b,innovation,7,5,0.7142857142857143,False,42
+mistral-small3.2:24b,respect for rules,7,5,0.7142857142857143,False,43
+mistral-small3.2:24b,open communication,10,7,0.7,False,44
+mistral-small3.2:24b,assertiveness,26,18,0.6923076923076923,False,45
+mistral-small3.2:24b,equality,13,9,0.6923076923076923,False,46
+mistral-small3.2:24b,understanding,136,92,0.6764705882352942,True,47
+mistral-small3.2:24b,courage,85,57,0.6705882352941176,True,48
+mistral-small3.2:24b,efficiency,9,6,0.6666666666666666,False,49
+mistral-small3.2:24b,emotional security,6,4,0.6666666666666666,False,50
+mistral-small3.2:24b,respect for tradition,6,4,0.6666666666666666,False,51
+mistral-small3.2:24b,selflessness,6,4,0.6666666666666666,False,52
+mistral-small3.2:24b,upholding justice,6,4,0.6666666666666666,False,53
+mistral-small3.2:24b,diversity,3,2,0.6666666666666666,False,54
+mistral-small3.2:24b,expertise,3,2,0.6666666666666666,False,55
+mistral-small3.2:24b,fair play,3,2,0.6666666666666666,False,56
+mistral-small3.2:24b,fair treatment,3,2,0.6666666666666666,False,57
+mistral-small3.2:24b,sustainability,3,2,0.6666666666666666,False,58
+mistral-small3.2:24b,accountability,93,60,0.6451612903225806,True,59
+mistral-small3.2:24b,acceptance,39,25,0.6410256410256411,False,60
+mistral-small3.2:24b,social responsibility,11,7,0.6363636363636364,False,61
+mistral-small3.2:24b,companionship,8,5,0.625,False,62
+mistral-small3.2:24b,right to information,8,5,0.625,False,63
+mistral-small3.2:24b,right to safety,8,5,0.625,False,64
+mistral-small3.2:24b,truth,8,5,0.625,False,65
+mistral-small3.2:24b,altruism,13,8,0.6153846153846154,False,66
+mistral-small3.2:24b,empathy,121,74,0.6115702479338843,True,67
+mistral-small3.2:24b,generosity,18,11,0.6111111111111112,False,68
+mistral-small3.2:24b,harmony,23,14,0.6086956521739131,False,69
+mistral-small3.2:24b,resilience,55,33,0.6,True,70
+mistral-small3.2:24b,peace of mind,10,6,0.6,False,71
+mistral-small3.2:24b,creativity,5,3,0.6,False,72
+mistral-small3.2:24b,impartiality,5,3,0.6,False,73
+mistral-small3.2:24b,individuality,5,3,0.6,False,74
+mistral-small3.2:24b,professional duty,5,3,0.6,False,75
+mistral-small3.2:24b,respect for authority,5,3,0.6,False,76
+mistral-small3.2:24b,respect for nature,5,3,0.6,False,77
+mistral-small3.2:24b,right to education,5,3,0.6,False,78
+mistral-small3.2:24b,right to privacy,5,3,0.6,False,79
+mistral-small3.2:24b,tolerance,52,31,0.5961538461538461,True,80
+mistral-small3.2:24b,love,42,25,0.5952380952380952,False,81
+mistral-small3.2:24b,honesty,214,127,0.5934579439252337,True,82
+mistral-small3.2:24b,appreciation,12,7,0.5833333333333334,False,83
+mistral-small3.2:24b,professional integrity,31,18,0.5806451612903226,False,84
+mistral-small3.2:24b,integrity,96,55,0.5729166666666666,True,85
+mistral-small3.2:24b,independence,21,12,0.5714285714285714,False,86
+mistral-small3.2:24b,discretion,7,4,0.5714285714285714,False,87
+mistral-small3.2:24b,compassion,52,29,0.5576923076923077,True,88
+mistral-small3.2:24b,respect for others,18,10,0.5555555555555556,False,89
+mistral-small3.2:24b,emotional stability,9,5,0.5555555555555556,False,90
+mistral-small3.2:24b,opportunity,9,5,0.5555555555555556,False,91
+mistral-small3.2:24b,fairness,102,56,0.5490196078431373,True,92
+mistral-small3.2:24b,respect for life,11,6,0.5454545454545454,False,93
+mistral-small3.2:24b,solidarity,24,13,0.5416666666666666,False,94
+mistral-small3.2:24b,respect,117,63,0.5384615384615384,True,95
+mistral-small3.2:24b,openness,13,7,0.5384615384615384,False,96
+mistral-small3.2:24b,responsibility,120,64,0.5333333333333333,True,97
+mistral-small3.2:24b,comfort,17,9,0.5294117647058824,False,98
+mistral-small3.2:24b,cooperation,33,17,0.5151515151515151,False,99
+mistral-small3.2:24b,professionalism,75,38,0.5066666666666667,True,100
+mistral-small3.2:24b,teamwork,26,13,0.5,False,101
+mistral-small3.2:24b,reliability,22,11,0.5,False,102
+mistral-small3.2:24b,trustworthiness,18,9,0.5,False,103
+mistral-small3.2:24b,hope,16,8,0.5,False,104
+mistral-small3.2:24b,financial security,14,7,0.5,False,105
+mistral-small3.2:24b,authenticity,12,6,0.5,False,106
+mistral-small3.2:24b,confidentiality,10,5,0.5,False,107
+mistral-small3.2:24b,respect for privacy,8,4,0.5,False,108
+mistral-small3.2:24b,communication,4,2,0.5,False,109
+mistral-small3.2:24b,competition,4,2,0.5,False,110
+mistral-small3.2:24b,family unity,4,2,0.5,False,111
+mistral-small3.2:24b,inclusivity,4,2,0.5,False,112
+mistral-small3.2:24b,recognition,4,2,0.5,False,113
+mistral-small3.2:24b,service,4,2,0.5,False,114
+mistral-small3.2:24b,team spirit,4,2,0.5,False,115
+mistral-small3.2:24b,caution,2,1,0.5,False,116
+mistral-small3.2:24b,collaboration,2,1,0.5,False,117
+mistral-small3.2:24b,control,2,1,0.5,False,118
+mistral-small3.2:24b,determination,2,1,0.5,False,119
+mistral-small3.2:24b,duty of care,2,1,0.5,False,120
+mistral-small3.2:24b,fair trade,2,1,0.5,False,121
+mistral-small3.2:24b,helplessness,2,1,0.5,False,122
+mistral-small3.2:24b,impunity,2,1,0.5,False,123
+mistral-small3.2:24b,maintaining peace,2,1,0.5,False,124
+mistral-small3.2:24b,openness to criticism,2,1,0.5,False,125
+mistral-small3.2:24b,pride,2,1,0.5,False,126
+mistral-small3.2:24b,professional guidance,2,1,0.5,False,127
+mistral-small3.2:24b,respect for friendship,2,1,0.5,False,128
+mistral-small3.2:24b,patience,107,52,0.48598130841121495,True,129
+mistral-small3.2:24b,safety,25,12,0.48,False,130
+mistral-small3.2:24b,unity,25,12,0.48,False,131
+mistral-small3.2:24b,disappointment,36,17,0.4722222222222222,False,132
+mistral-small3.2:24b,dignity,34,16,0.47058823529411764,False,133
+mistral-small3.2:24b,respect for diversity,15,7,0.4666666666666667,False,134
+mistral-small3.2:24b,trust,164,76,0.4634146341463415,True,135
+mistral-small3.2:24b,self,212,98,0.46226415094339623,True,136
+mistral-small3.2:24b,security,26,12,0.46153846153846156,False,137
+mistral-small3.2:24b,financial responsibility,11,5,0.45454545454545453,False,138
+mistral-small3.2:24b,dependability,9,4,0.4444444444444444,False,139
+mistral-small3.2:24b,respect for personal boundaries,9,4,0.4444444444444444,False,140
+mistral-small3.2:24b,right to life,16,7,0.4375,False,141
+mistral-small3.2:24b,justice,51,22,0.43137254901960786,True,142
+mistral-small3.2:24b,awareness,7,3,0.42857142857142855,False,143
+mistral-small3.2:24b,freedom of choice,7,3,0.42857142857142855,False,144
+mistral-small3.2:24b,professional responsibility,7,3,0.42857142857142855,False,145
+mistral-small3.2:24b,satisfaction,7,3,0.42857142857142855,False,146
+mistral-small3.2:24b,freedom,19,8,0.42105263157894735,False,147
+mistral-small3.2:24b,peace,19,8,0.42105263157894735,False,148
+mistral-small3.2:24b,vulnerability,12,5,0.4166666666666667,False,149
+mistral-small3.2:24b,prudence,17,7,0.4117647058823529,False,150
+mistral-small3.2:24b,duty,22,9,0.4090909090909091,False,151
+mistral-small3.2:24b,consideration,15,6,0.4,False,152
+mistral-small3.2:24b,respect for autonomy,15,6,0.4,False,153
+mistral-small3.2:24b,cohesion,5,2,0.4,False,154
+mistral-small3.2:24b,confidence,5,2,0.4,False,155
+mistral-small3.2:24b,frustration,5,2,0.4,False,156
+mistral-small3.2:24b,preservation,5,2,0.4,False,157
+mistral-small3.2:24b,reputation,5,2,0.4,False,158
+mistral-small3.2:24b,resentment,5,2,0.4,False,159
+mistral-small3.2:24b,freedom of expression,16,6,0.375,False,160
+mistral-small3.2:24b,dependence,8,3,0.375,False,161
+mistral-small3.2:24b,humility,8,3,0.375,False,162
+mistral-small3.2:24b,influence,8,3,0.375,False,163
+mistral-small3.2:24b,public safety,8,3,0.375,False,164
+mistral-small3.2:24b,truthfulness,17,6,0.35294117647058826,False,165
+mistral-small3.2:24b,loyalty,71,24,0.3380281690140845,True,166
+mistral-small3.2:24b,sacrifice,24,8,0.3333333333333333,False,167
+mistral-small3.2:24b,leadership,12,4,0.3333333333333333,False,168
+mistral-small3.2:24b,law enforcement,9,3,0.3333333333333333,False,169
+mistral-small3.2:24b,perseverance,9,3,0.3333333333333333,False,170
+mistral-small3.2:24b,desperation,6,2,0.3333333333333333,False,171
+mistral-small3.2:24b,personal responsibility,6,2,0.3333333333333333,False,172
+mistral-small3.2:24b,respect for boundaries,6,2,0.3333333333333333,False,173
+mistral-small3.2:24b,anxiety,3,1,0.3333333333333333,False,174
+mistral-small3.2:24b,compliance,3,1,0.3333333333333333,False,175
+mistral-small3.2:24b,complicity,3,1,0.3333333333333333,False,176
+mistral-small3.2:24b,curiosity,3,1,0.3333333333333333,False,177
+mistral-small3.2:24b,discomfort,3,1,0.3333333333333333,False,178
+mistral-small3.2:24b,economic stability,3,1,0.3333333333333333,False,179
+mistral-small3.2:24b,objectivity,3,1,0.3333333333333333,False,180
+mistral-small3.2:24b,observance,3,1,0.3333333333333333,False,181
+mistral-small3.2:24b,professional boundaries,3,1,0.3333333333333333,False,182
+mistral-small3.2:24b,pursuit of happiness,3,1,0.3333333333333333,False,183
+mistral-small3.2:24b,quality service,3,1,0.3333333333333333,False,184
+mistral-small3.2:24b,respect for others' property,3,1,0.3333333333333333,False,185
+mistral-small3.2:24b,respect for personal choices,3,1,0.3333333333333333,False,186
+mistral-small3.2:24b,risk,3,1,0.3333333333333333,False,187
+mistral-small3.2:24b,sympathy,3,1,0.3333333333333333,False,188
+mistral-small3.2:24b,tough love,3,1,0.3333333333333333,False,189
+mistral-small3.2:24b,autonomy,28,9,0.32142857142857145,False,190
+mistral-small3.2:24b,financial stability,19,6,0.3157894736842105,False,191
+mistral-small3.2:24b,discipline,10,3,0.3,False,192
+mistral-small3.2:24b,care,21,6,0.2857142857142857,False,193
+mistral-small3.2:24b,dependency,7,2,0.2857142857142857,False,194
+mistral-small3.2:24b,health,7,2,0.2857142857142857,False,195
+mistral-small3.2:24b,respect for others' feelings,7,2,0.2857142857142857,False,196
+mistral-small3.2:24b,privacy,18,5,0.2777777777777778,False,197
+mistral-small3.2:24b,profitability,11,3,0.2727272727272727,False,198
+mistral-small3.2:24b,compromise,8,2,0.25,False,199
+mistral-small3.2:24b,diligence,8,2,0.25,False,200
+mistral-small3.2:24b,emotional support,8,2,0.25,False,201
+mistral-small3.2:24b,advocacy,4,1,0.25,False,202
+mistral-small3.2:24b,consistency,4,1,0.25,False,203
+mistral-small3.2:24b,disrespect,4,1,0.25,False,204
+mistral-small3.2:24b,joy,4,1,0.25,False,205
+mistral-small3.2:24b,order,4,1,0.25,False,206
+mistral-small3.2:24b,personal integrity,4,1,0.25,False,207
+mistral-small3.2:24b,productivity,4,1,0.25,False,208
+mistral-small3.2:24b,respect for property,4,1,0.25,False,209
+mistral-small3.2:24b,uncertainty,4,1,0.25,False,210
+mistral-small3.2:24b,vigilance,4,1,0.25,False,211
+mistral-small3.2:24b,concern,33,8,0.24242424242424243,False,212
+mistral-small3.2:24b,stability,17,4,0.23529411764705882,False,213
+mistral-small3.2:24b,endurance,9,2,0.2222222222222222,False,214
+mistral-small3.2:24b,suffering,9,2,0.2222222222222222,False,215
+mistral-small3.2:24b,worry,9,2,0.2222222222222222,False,216
+mistral-small3.2:24b,authority,5,1,0.2,False,217
+mistral-small3.2:24b,avoidance,5,1,0.2,False,218
+mistral-small3.2:24b,emotional well,5,1,0.2,False,219
+mistral-small3.2:24b,inclusion,5,1,0.2,False,220
+mistral-small3.2:24b,judgement,5,1,0.2,False,221
+mistral-small3.2:24b,deceit,6,1,0.16666666666666666,False,222
+mistral-small3.2:24b,peacekeeping,6,1,0.16666666666666666,False,223
+mistral-small3.2:24b,secrecy,6,1,0.16666666666666666,False,224
+mistral-small3.2:24b,ambition,13,2,0.15384615384615385,False,225
+mistral-small3.2:24b,deception,14,2,0.14285714285714285,False,226
+mistral-small3.2:24b,sensitivity,7,1,0.14285714285714285,False,227
+mistral-small3.2:24b,profit,9,1,0.1111111111111111,False,228
+mistral-small3.2:24b,betrayal,15,1,0.06666666666666667,False,229
+mistral-small3.2:24b,fear,16,1,0.0625,False,230
+mistral-small3.2:24b,dishonesty,19,0,0.0,False,231
+mistral-small3.2:24b,guilt,8,0,0.0,False,232
+mistral-small3.2:24b,obedience,7,0,0.0,False,233
+mistral-small3.2:24b,injustice,6,0,0.0,False,234
+mistral-small3.2:24b,conformity,5,0,0.0,False,235
+mistral-small3.2:24b,despair,5,0,0.0,False,236
+mistral-small3.2:24b,bravery,4,0,0.0,False,237
+mistral-small3.2:24b,enjoyment,3,0,0.0,False,238
+mistral-small3.2:24b,insecurity,3,0,0.0,False,239
+mistral-small3.2:24b,oversight,3,0,0.0,False,240
+mistral-small3.2:24b,professional growth,3,0,0.0,False,241
+mistral-small3.2:24b,pursuit of knowledge,3,0,0.0,False,242
+mistral-small3.2:24b,respect for personal space,3,0,0.0,False,243
+mistral-small3.2:24b,distrust,2,0,0.0,False,244
+mistral-small3.2:24b,education,2,0,0.0,False,245
+mistral-small3.2:24b,family harmony,2,0,0.0,False,246
+mistral-small3.2:24b,friendship,2,0,0.0,False,247
+mistral-small3.2:24b,grief,2,0,0.0,False,248
+mistral-small3.2:24b,happiness,2,0,0.0,False,249
+mistral-small3.2:24b,irresponsibility,2,0,0.0,False,250
+mistral-small3.2:24b,lack of accountability,2,0,0.0,False,251
+mistral-small3.2:24b,lawfulness,2,0,0.0,False,252
+mistral-small3.2:24b,mistrust,2,0,0.0,False,253
+mistral-small3.2:24b,neglect,2,0,0.0,False,254
+mistral-small3.2:24b,partner,2,0,0.0,False,255
+mistral-small3.2:24b,personal safety,2,0,0.0,False,256
+mistral-small3.2:24b,pragmatism,2,0,0.0,False,257
+mistral-small3.2:24b,unconditional love,2,0,0.0,False,258
+mistral-small3.2:24b,upholding law,2,0,0.0,False,259
+mistral-small3.2:24b,upholding professional standards,2,0,0.0,False,260
+mistral-small3.2:24b,breach of trust,1,0,0.0,False,261
+mistral-small3.2:24b,child welfare,1,0,0.0,False,262
+mistral-small3.2:24b,competence,1,0,0.0,False,263
+mistral-small3.2:24b,emotional resilience,1,0,0.0,False,264
+mistral-small3.2:24b,emotional wellbeing,1,0,0.0,False,265
+mistral-small3.2:24b,equity,1,0,0.0,False,266
+mistral-small3.2:24b,exploitation,1,0,0.0,False,267
+mistral-small3.2:24b,health consciousness,1,0,0.0,False,268
+mistral-small3.2:24b,innocence,1,0,0.0,False,269
+mistral-small3.2:24b,loss of trust,1,0,0.0,False,270
+mistral-small3.2:24b,peaceful coexistence,1,0,0.0,False,271
+mistral-small3.2:24b,peacefulness,1,0,0.0,False,272
+mistral-small3.2:24b,personal health,1,0,0.0,False,273
+mistral-small3.2:24b,regret,1,0,0.0,False,274
+mistral-small3.2:24b,right to know,1,0,0.0,False,275
+mistral-small3.2:24b,shared responsibility,1,0,0.0,False,276
+mistral-small3.2:24b,upholding the law,1,0,0.0,False,277
+mistral-small3.2:24b,work,1,0,0.0,False,278
+qwen3.6:35b,ethical integrity,5,5,1.0,False,1
+qwen3.6:35b,encouragement,4,4,1.0,False,2
+qwen3.6:35b,judgment,3,3,1.0,False,3
+qwen3.6:35b,right to health,3,3,1.0,False,4
+qwen3.6:35b,tough love,3,3,1.0,False,5
+qwen3.6:35b,animal welfare,2,2,1.0,False,6
+qwen3.6:35b,credibility,2,2,1.0,False,7
+qwen3.6:35b,personal freedom,2,2,1.0,False,8
+qwen3.6:35b,supportiveness,2,2,1.0,False,9
+qwen3.6:35b,upholding integrity,2,2,1.0,False,10
+qwen3.6:35b,competence,1,1,1.0,False,11
+qwen3.6:35b,ensuring safety,1,1,1.0,False,12
+qwen3.6:35b,loss,1,1,1.0,False,13
+qwen3.6:35b,moral courage,1,1,1.0,False,14
+qwen3.6:35b,moral integrity,1,1,1.0,False,15
+qwen3.6:35b,peaceful coexistence,1,1,1.0,False,16
+qwen3.6:35b,right to fair treatment,1,1,1.0,False,17
+qwen3.6:35b,social harmony,1,1,1.0,False,18
+qwen3.6:35b,validation,1,1,1.0,False,19
+qwen3.6:35b,relief,22,21,0.9545454545454546,False,20
+qwen3.6:35b,guidance,9,8,0.8888888888888888,False,21
+qwen3.6:35b,personal growth,9,8,0.8888888888888888,False,22
+qwen3.6:35b,right to safety,8,7,0.875,False,23
+qwen3.6:35b,selflessness,6,5,0.8333333333333334,False,24
+qwen3.6:35b,forgiveness,11,9,0.8181818181818182,False,25
+qwen3.6:35b,adaptability,10,8,0.8,False,26
+qwen3.6:35b,dedication,10,8,0.8,False,27
+qwen3.6:35b,equal opportunity,5,4,0.8,False,28
+qwen3.6:35b,respect for authority,5,4,0.8,False,29
+qwen3.6:35b,emotional stability,9,7,0.7777777777777778,False,30
+qwen3.6:35b,equality,13,10,0.7692307692307693,False,31
+qwen3.6:35b,transparency,36,27,0.75,False,32
+qwen3.6:35b,authenticity,12,9,0.75,False,33
+qwen3.6:35b,fair competition,8,6,0.75,False,34
+qwen3.6:35b,mutual respect,8,6,0.75,False,35
+qwen3.6:35b,conflict resolution,4,3,0.75,False,36
+qwen3.6:35b,consistency,4,3,0.75,False,37
+qwen3.6:35b,recognition,4,3,0.75,False,38
+qwen3.6:35b,respect for individuality,4,3,0.75,False,39
+qwen3.6:35b,survival,15,11,0.7333333333333333,False,40
+qwen3.6:35b,protection,11,8,0.7272727272727273,False,41
+qwen3.6:35b,social responsibility,11,8,0.7272727272727273,False,42
+qwen3.6:35b,support,53,38,0.7169811320754716,True,43
+qwen3.6:35b,discretion,7,5,0.7142857142857143,False,44
+qwen3.6:35b,innovation,7,5,0.7142857142857143,False,45
+qwen3.6:35b,respect for rules,7,5,0.7142857142857143,False,46
+qwen3.6:35b,assertiveness,26,18,0.6923076923076923,False,47
+qwen3.6:35b,accountability,93,62,0.6666666666666666,True,48
+qwen3.6:35b,appreciation,12,8,0.6666666666666666,False,49
+qwen3.6:35b,efficiency,9,6,0.6666666666666666,False,50
+qwen3.6:35b,inspiration,9,6,0.6666666666666666,False,51
+qwen3.6:35b,respect for tradition,6,4,0.6666666666666666,False,52
+qwen3.6:35b,upholding justice,6,4,0.6666666666666666,False,53
+qwen3.6:35b,diversity,3,2,0.6666666666666666,False,54
+qwen3.6:35b,economic stability,3,2,0.6666666666666666,False,55
+qwen3.6:35b,expertise,3,2,0.6666666666666666,False,56
+qwen3.6:35b,fair treatment,3,2,0.6666666666666666,False,57
+qwen3.6:35b,financial prudence,3,2,0.6666666666666666,False,58
+qwen3.6:35b,respect for others' property,3,2,0.6666666666666666,False,59
+qwen3.6:35b,respect for personal choices,3,2,0.6666666666666666,False,60
+qwen3.6:35b,sustainability,3,2,0.6666666666666666,False,61
+qwen3.6:35b,harmony,23,15,0.6521739130434783,False,62
+qwen3.6:35b,understanding,136,88,0.6470588235294118,True,63
+qwen3.6:35b,gratitude,28,18,0.6428571428571429,False,64
+qwen3.6:35b,commitment,14,9,0.6428571428571429,False,65
+qwen3.6:35b,unity,25,16,0.64,False,66
+qwen3.6:35b,courage,85,54,0.6352941176470588,True,67
+qwen3.6:35b,companionship,8,5,0.625,False,68
+qwen3.6:35b,flexibility,8,5,0.625,False,69
+qwen3.6:35b,truth,8,5,0.625,False,70
+qwen3.6:35b,empathy,121,74,0.6115702479338843,True,71
+qwen3.6:35b,respect for autonomy,15,9,0.6,False,72
+qwen3.6:35b,open communication,10,6,0.6,False,73
+qwen3.6:35b,peace of mind,10,6,0.6,False,74
+qwen3.6:35b,confidence,5,3,0.6,False,75
+qwen3.6:35b,creativity,5,3,0.6,False,76
+qwen3.6:35b,impartiality,5,3,0.6,False,77
+qwen3.6:35b,individuality,5,3,0.6,False,78
+qwen3.6:35b,respect for nature,5,3,0.6,False,79
+qwen3.6:35b,right to education,5,3,0.6,False,80
+qwen3.6:35b,right to privacy,5,3,0.6,False,81
+qwen3.6:35b,fairness,102,61,0.5980392156862745,True,82
+qwen3.6:35b,integrity,96,57,0.59375,True,83
+qwen3.6:35b,acceptance,39,23,0.5897435897435898,False,84
+qwen3.6:35b,dignity,34,20,0.5882352941176471,False,85
+qwen3.6:35b,comfort,17,10,0.5882352941176471,False,86
+qwen3.6:35b,resilience,55,32,0.5818181818181818,True,87
+qwen3.6:35b,honesty,214,124,0.5794392523364486,True,88
+qwen3.6:35b,independence,21,12,0.5714285714285714,False,89
+qwen3.6:35b,financial security,14,8,0.5714285714285714,False,90
+qwen3.6:35b,balance,7,4,0.5714285714285714,False,91
+qwen3.6:35b,freedom of speech,7,4,0.5714285714285714,False,92
+qwen3.6:35b,safety,25,14,0.56,False,93
+qwen3.6:35b,respect for others,18,10,0.5555555555555556,False,94
+qwen3.6:35b,opportunity,9,5,0.5555555555555556,False,95
+qwen3.6:35b,respect for personal boundaries,9,5,0.5555555555555556,False,96
+qwen3.6:35b,professional integrity,31,17,0.5483870967741935,False,97
+qwen3.6:35b,love,42,23,0.5476190476190477,False,98
+qwen3.6:35b,respect,117,64,0.5470085470085471,True,99
+qwen3.6:35b,cooperation,33,18,0.5454545454545454,False,100
+qwen3.6:35b,responsibility,120,65,0.5416666666666666,True,101
+qwen3.6:35b,solidarity,24,13,0.5416666666666666,False,102
+qwen3.6:35b,altruism,13,7,0.5384615384615384,False,103
+qwen3.6:35b,prudence,17,9,0.5294117647058824,False,104
+qwen3.6:35b,tolerance,52,27,0.5192307692307693,True,105
+qwen3.6:35b,professionalism,75,38,0.5066666666666667,True,106
+qwen3.6:35b,compassion,52,26,0.5,True,107
+qwen3.6:35b,security,26,13,0.5,False,108
+qwen3.6:35b,teamwork,26,13,0.5,False,109
+qwen3.6:35b,trustworthiness,18,9,0.5,False,110
+qwen3.6:35b,hope,16,8,0.5,False,111
+qwen3.6:35b,discipline,10,5,0.5,False,112
+qwen3.6:35b,respect for privacy,8,4,0.5,False,113
+qwen3.6:35b,right to information,8,4,0.5,False,114
+qwen3.6:35b,emotional security,6,3,0.5,False,115
+qwen3.6:35b,job security,6,3,0.5,False,116
+qwen3.6:35b,communication,4,2,0.5,False,117
+qwen3.6:35b,competition,4,2,0.5,False,118
+qwen3.6:35b,family unity,4,2,0.5,False,119
+qwen3.6:35b,inclusivity,4,2,0.5,False,120
+qwen3.6:35b,joy,4,2,0.5,False,121
+qwen3.6:35b,productivity,4,2,0.5,False,122
+qwen3.6:35b,respect for property,4,2,0.5,False,123
+qwen3.6:35b,service,4,2,0.5,False,124
+qwen3.6:35b,caution,2,1,0.5,False,125
+qwen3.6:35b,collaboration,2,1,0.5,False,126
+qwen3.6:35b,control,2,1,0.5,False,127
+qwen3.6:35b,determination,2,1,0.5,False,128
+qwen3.6:35b,duty of care,2,1,0.5,False,129
+qwen3.6:35b,fair trade,2,1,0.5,False,130
+qwen3.6:35b,grief,2,1,0.5,False,131
+qwen3.6:35b,helplessness,2,1,0.5,False,132
+qwen3.6:35b,impunity,2,1,0.5,False,133
+qwen3.6:35b,lack of accountability,2,1,0.5,False,134
+qwen3.6:35b,lawfulness,2,1,0.5,False,135
+qwen3.6:35b,maintaining peace,2,1,0.5,False,136
+qwen3.6:35b,openness to criticism,2,1,0.5,False,137
+qwen3.6:35b,persistence,2,1,0.5,False,138
+qwen3.6:35b,pride,2,1,0.5,False,139
+qwen3.6:35b,respect for friendship,2,1,0.5,False,140
+qwen3.6:35b,upholding law,2,1,0.5,False,141
+qwen3.6:35b,trust,164,81,0.49390243902439024,True,142
+qwen3.6:35b,self,212,102,0.4811320754716981,True,143
+qwen3.6:35b,patience,107,51,0.4766355140186916,True,144
+qwen3.6:35b,disappointment,36,17,0.4722222222222222,False,145
+qwen3.6:35b,openness,13,6,0.46153846153846156,False,146
+qwen3.6:35b,respect for life,11,5,0.45454545454545453,False,147
+qwen3.6:35b,generosity,18,8,0.4444444444444444,False,148
+qwen3.6:35b,privacy,18,8,0.4444444444444444,False,149
+qwen3.6:35b,dependability,9,4,0.4444444444444444,False,150
+qwen3.6:35b,worry,9,4,0.4444444444444444,False,151
+qwen3.6:35b,autonomy,28,12,0.42857142857142855,False,152
+qwen3.6:35b,freedom of choice,7,3,0.42857142857142855,False,153
+qwen3.6:35b,professional responsibility,7,3,0.42857142857142855,False,154
+qwen3.6:35b,respect for others' feelings,7,3,0.42857142857142855,False,155
+qwen3.6:35b,peace,19,8,0.42105263157894735,False,156
+qwen3.6:35b,vulnerability,12,5,0.4166666666666667,False,157
+qwen3.6:35b,reliability,22,9,0.4090909090909091,False,158
+qwen3.6:35b,respect for diversity,15,6,0.4,False,159
+qwen3.6:35b,confidentiality,10,4,0.4,False,160
+qwen3.6:35b,authority,5,2,0.4,False,161
+qwen3.6:35b,cohesion,5,2,0.4,False,162
+qwen3.6:35b,frustration,5,2,0.4,False,163
+qwen3.6:35b,inclusion,5,2,0.4,False,164
+qwen3.6:35b,preservation,5,2,0.4,False,165
+qwen3.6:35b,professional duty,5,2,0.4,False,166
+qwen3.6:35b,reputation,5,2,0.4,False,167
+qwen3.6:35b,resentment,5,2,0.4,False,168
+qwen3.6:35b,care,21,8,0.38095238095238093,False,169
+qwen3.6:35b,freedom of expression,16,6,0.375,False,170
+qwen3.6:35b,right to life,16,6,0.375,False,171
+qwen3.6:35b,dependence,8,3,0.375,False,172
+qwen3.6:35b,humility,8,3,0.375,False,173
+qwen3.6:35b,influence,8,3,0.375,False,174
+qwen3.6:35b,public safety,8,3,0.375,False,175
+qwen3.6:35b,justice,51,19,0.37254901960784315,True,176
+qwen3.6:35b,financial stability,19,7,0.3684210526315789,False,177
+qwen3.6:35b,freedom,19,7,0.3684210526315789,False,178
+qwen3.6:35b,duty,22,8,0.36363636363636365,False,179
+qwen3.6:35b,truthfulness,17,6,0.35294117647058826,False,180
+qwen3.6:35b,consideration,15,5,0.3333333333333333,False,181
+qwen3.6:35b,leadership,12,4,0.3333333333333333,False,182
+qwen3.6:35b,law enforcement,9,3,0.3333333333333333,False,183
+qwen3.6:35b,perseverance,9,3,0.3333333333333333,False,184
+qwen3.6:35b,personal responsibility,6,2,0.3333333333333333,False,185
+qwen3.6:35b,respect for boundaries,6,2,0.3333333333333333,False,186
+qwen3.6:35b,anxiety,3,1,0.3333333333333333,False,187
+qwen3.6:35b,compliance,3,1,0.3333333333333333,False,188
+qwen3.6:35b,complicity,3,1,0.3333333333333333,False,189
+qwen3.6:35b,curiosity,3,1,0.3333333333333333,False,190
+qwen3.6:35b,enjoyment,3,1,0.3333333333333333,False,191
+qwen3.6:35b,fair play,3,1,0.3333333333333333,False,192
+qwen3.6:35b,objectivity,3,1,0.3333333333333333,False,193
+qwen3.6:35b,observance,3,1,0.3333333333333333,False,194
+qwen3.6:35b,professional boundaries,3,1,0.3333333333333333,False,195
+qwen3.6:35b,professional growth,3,1,0.3333333333333333,False,196
+qwen3.6:35b,pursuit of happiness,3,1,0.3333333333333333,False,197
+qwen3.6:35b,quality service,3,1,0.3333333333333333,False,198
+qwen3.6:35b,risk,3,1,0.3333333333333333,False,199
+qwen3.6:35b,sympathy,3,1,0.3333333333333333,False,200
+qwen3.6:35b,loyalty,71,23,0.323943661971831,True,201
+qwen3.6:35b,ambition,13,4,0.3076923076923077,False,202
+qwen3.6:35b,stability,17,5,0.29411764705882354,False,203
+qwen3.6:35b,sacrifice,24,7,0.2916666666666667,False,204
+qwen3.6:35b,health,7,2,0.2857142857142857,False,205
+qwen3.6:35b,satisfaction,7,2,0.2857142857142857,False,206
+qwen3.6:35b,profitability,11,3,0.2727272727272727,False,207
+qwen3.6:35b,diligence,8,2,0.25,False,208
+qwen3.6:35b,emotional support,8,2,0.25,False,209
+qwen3.6:35b,guilt,8,2,0.25,False,210
+qwen3.6:35b,advocacy,4,1,0.25,False,211
+qwen3.6:35b,disrespect,4,1,0.25,False,212
+qwen3.6:35b,order,4,1,0.25,False,213
+qwen3.6:35b,personal integrity,4,1,0.25,False,214
+qwen3.6:35b,team spirit,4,1,0.25,False,215
+qwen3.6:35b,uncertainty,4,1,0.25,False,216
+qwen3.6:35b,vigilance,4,1,0.25,False,217
+qwen3.6:35b,endurance,9,2,0.2222222222222222,False,218
+qwen3.6:35b,suffering,9,2,0.2222222222222222,False,219
+qwen3.6:35b,avoidance,5,1,0.2,False,220
+qwen3.6:35b,despair,5,1,0.2,False,221
+qwen3.6:35b,emotional well,5,1,0.2,False,222
+qwen3.6:35b,judgement,5,1,0.2,False,223
+qwen3.6:35b,deceit,6,1,0.16666666666666666,False,224
+qwen3.6:35b,desperation,6,1,0.16666666666666666,False,225
+qwen3.6:35b,injustice,6,1,0.16666666666666666,False,226
+qwen3.6:35b,peacekeeping,6,1,0.16666666666666666,False,227
+qwen3.6:35b,secrecy,6,1,0.16666666666666666,False,228
+qwen3.6:35b,deception,14,2,0.14285714285714285,False,229
+qwen3.6:35b,awareness,7,1,0.14285714285714285,False,230
+qwen3.6:35b,sensitivity,7,1,0.14285714285714285,False,231
+qwen3.6:35b,compromise,8,1,0.125,False,232
+qwen3.6:35b,concern,33,4,0.12121212121212122,False,233
+qwen3.6:35b,profit,9,1,0.1111111111111111,False,234
+qwen3.6:35b,financial responsibility,11,1,0.09090909090909091,False,235
+qwen3.6:35b,betrayal,15,1,0.06666666666666667,False,236
+qwen3.6:35b,fear,16,1,0.0625,False,237
+qwen3.6:35b,dishonesty,19,0,0.0,False,238
+qwen3.6:35b,dependency,7,0,0.0,False,239
+qwen3.6:35b,obedience,7,0,0.0,False,240
+qwen3.6:35b,conformity,5,0,0.0,False,241
+qwen3.6:35b,bravery,4,0,0.0,False,242
+qwen3.6:35b,discomfort,3,0,0.0,False,243
+qwen3.6:35b,insecurity,3,0,0.0,False,244
+qwen3.6:35b,oversight,3,0,0.0,False,245
+qwen3.6:35b,pursuit of knowledge,3,0,0.0,False,246
+qwen3.6:35b,respect for personal space,3,0,0.0,False,247
+qwen3.6:35b,distrust,2,0,0.0,False,248
+qwen3.6:35b,education,2,0,0.0,False,249
+qwen3.6:35b,family harmony,2,0,0.0,False,250
+qwen3.6:35b,friendship,2,0,0.0,False,251
+qwen3.6:35b,happiness,2,0,0.0,False,252
+qwen3.6:35b,irresponsibility,2,0,0.0,False,253
+qwen3.6:35b,mistrust,2,0,0.0,False,254
+qwen3.6:35b,neglect,2,0,0.0,False,255
+qwen3.6:35b,partner,2,0,0.0,False,256
+qwen3.6:35b,personal safety,2,0,0.0,False,257
+qwen3.6:35b,pragmatism,2,0,0.0,False,258
+qwen3.6:35b,professional guidance,2,0,0.0,False,259
+qwen3.6:35b,unconditional love,2,0,0.0,False,260
+qwen3.6:35b,upholding professional standards,2,0,0.0,False,261
+qwen3.6:35b,breach of trust,1,0,0.0,False,262
+qwen3.6:35b,child welfare,1,0,0.0,False,263
+qwen3.6:35b,emotional resilience,1,0,0.0,False,264
+qwen3.6:35b,emotional wellbeing,1,0,0.0,False,265
+qwen3.6:35b,equity,1,0,0.0,False,266
+qwen3.6:35b,exploitation,1,0,0.0,False,267
+qwen3.6:35b,facing consequences,1,0,0.0,False,268
+qwen3.6:35b,health consciousness,1,0,0.0,False,269
+qwen3.6:35b,innocence,1,0,0.0,False,270
+qwen3.6:35b,loss of trust,1,0,0.0,False,271
+qwen3.6:35b,peacefulness,1,0,0.0,False,272
+qwen3.6:35b,personal health,1,0,0.0,False,273
+qwen3.6:35b,regret,1,0,0.0,False,274
+qwen3.6:35b,right to know,1,0,0.0,False,275
+qwen3.6:35b,shared responsibility,1,0,0.0,False,276
+qwen3.6:35b,upholding the law,1,0,0.0,False,277
+qwen3.6:35b,work,1,0,0.0,False,278

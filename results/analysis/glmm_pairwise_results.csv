@@ -1,0 +1,7 @@
+"value","model_1","model_2","p_value","p_adjusted","significant"
+"accountability","gemma4:31b","mistral-small3.2:24b",0.00403690577176784,0.0121176693179454,TRUE
+"accountability","gpt-oss:20b","mistral-small3.2:24b",0.00403922310598181,0.0121176693179454,TRUE
+"accountability","gemma4:31b","qwen3.6:35b",0.0179378667970579,0.0269187776151991,TRUE
+"accountability","gpt-oss:20b","qwen3.6:35b",0.0179458517434661,0.0269187776151991,TRUE
+"accountability","mistral-small3.2:24b","qwen3.6:35b",0.50384936726322,0.604619240715864,FALSE
+"accountability","gemma4:31b","gpt-oss:20b",0.999999695149911,0.999999695149911,FALSE
